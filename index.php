@@ -2,6 +2,7 @@
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle("Главная");
 ?>
+    <div class="timeToDevelop">В текущий момент сайт находится в разработке</div>
 <div class="content-wrap">
 	<?$APPLICATION->IncludeComponent(	"bitrix:news.list",	"main-slider",
 	Array(
