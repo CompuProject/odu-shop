@@ -13,6 +13,13 @@ $aMenuLinks = Array(
 		Array(),
 		Array(),
 		""
-	)
+	),
+    Array(
+        "контакты",
+        SITE_DIR . "contacts/",
+        Array(),
+        Array(),
+        ""
+    )
 );
 ?>
