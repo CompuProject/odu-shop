@@ -49,7 +49,7 @@ ob_start();
 							{
 								$value = $arProperty['VALUE'];
 								if (is_array($arProperty['VALUE'])) $value = implode(', ', $arProperty['VALUE']);	
-								?><span><?=$arProperty['NAME']?></span>:<?=$value?><br><?
+								?><span><?=$arProperty['NAME']?>:</span><?=$value?><br><?
 							}
 						?>
 					<?endforeach?>
