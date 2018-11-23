@@ -197,7 +197,8 @@ span a:hover, div a:hover {
   letter-spacing: 3px;
   transition: all 0.2s ease; }
   .btn-black:hover {
-    color: #e2574c; }
+    color: #1884cc;
+  }
 
 .btn {
   display: inline-block;
@@ -303,9 +304,9 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  background: #e2574c;
-  border: 5px solid white;
-  color: white;
+  background: #105378;
+  border: 5px solid #105378;
+  color: #ffffff;
   font-size: 14px;
   width: 130px;
   height: 100%;
@@ -1357,7 +1358,7 @@ vertical-align: top;
 
 .footer__list-link {
   color: #d3d3d3;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   transition: all 0.2s ease; }
   .footer__list-link:hover {
