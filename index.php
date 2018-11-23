@@ -144,30 +144,30 @@ $APPLICATION->SetTitle("Главная");
 		);?>
 		</div>
 	</section>
-	<?$APPLICATION->IncludeComponent("bitrix:news.list","main-news",
-	Array(
-		"ADD_SECTIONS_CHAIN" => "N",
-		"AJAX_MODE" => "N",
-		"CACHE_FILTER" => "N",
-		"CACHE_GROUPS" => "N",
-		"CACHE_TIME" => "3600000",
-		"CACHE_TYPE" => "A",
-		"DISPLAY_BOTTOM_PAGER" => "N",
-		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => Array("NAME","PREVIEW_TEXT","PREVIEW_PICTURE","DETAIL_TEXT","DETAIL_PICTURE","DATE_CREATE"),
-		"IBLOCK_ID" => "aloha_lodio_news",
-		"IBLOCK_TYPE" => "aloha_lodio_content",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-		"NEWS_COUNT" => "3",
-		"PROPERTY_CODE" => Array("*"),
-		"SET_BROWSER_TITLE" => "N",
-		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "N",
-		"SHOW_404" => "N",
-		"SORT_BY1" => "SORT",
-		"SORT_ORDER1" => "ASC"
-		)
-	);?>
+<!--	--><?//$APPLICATION->IncludeComponent("bitrix:news.list","main-news",
+//	Array(
+//		"ADD_SECTIONS_CHAIN" => "N",
+//		"AJAX_MODE" => "N",
+//		"CACHE_FILTER" => "N",
+//		"CACHE_GROUPS" => "N",
+//		"CACHE_TIME" => "3600000",
+//		"CACHE_TYPE" => "A",
+//		"DISPLAY_BOTTOM_PAGER" => "N",
+//		"DISPLAY_TOP_PAGER" => "N",
+//		"FIELD_CODE" => Array("NAME","PREVIEW_TEXT","PREVIEW_PICTURE","DETAIL_TEXT","DETAIL_PICTURE","DATE_CREATE"),
+//		"IBLOCK_ID" => "aloha_lodio_news",
+//		"IBLOCK_TYPE" => "aloha_lodio_content",
+//		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+//		"NEWS_COUNT" => "3",
+//		"PROPERTY_CODE" => Array("*"),
+//		"SET_BROWSER_TITLE" => "N",
+//		"SET_STATUS_404" => "N",
+//		"SET_TITLE" => "N",
+//		"SHOW_404" => "N",
+//		"SORT_BY1" => "SORT",
+//		"SORT_ORDER1" => "ASC"
+//		)
+//	);?>
 	<?$APPLICATION->IncludeComponent(	"bitrix:subscribe.form",".default",
 	Array(
 		"ALLOW_ANONYMOUS" => "Y",

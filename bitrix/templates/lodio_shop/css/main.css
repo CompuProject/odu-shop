@@ -677,11 +677,12 @@ a {
 .popular,
 .catalog {
   text-align: center;
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+}
   
 .popular {
     padding-bottom: 0px;
-	margin-bottom: -58px;	
+	/*margin-bottom: -58px;	*/
 }
 
 .popular__items,
