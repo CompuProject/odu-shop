@@ -1,0 +1,90 @@
+.b-custom-text {
+	
+}
+
+.b-custom-text h1,
+.b-custom-text h2,
+.b-custom-text h3 {
+    text-align: center;
+    padding: 0 0 22px 0;
+	line-height: 1;
+    font-weight: bold;
+    color: #252424;
+    padding: 0 0 22px 0;	
+}
+
+.b-custom-text h1 {
+    font-size: 24px;
+}
+
+.b-custom-text h2 {
+    font-size: 20px;
+}
+
+.b-custom-text h3 {
+    font-size: 18px;
+}
+
+.b-custom-text h4 {
+    font-size: 16px;
+    text-align: left;
+    color: #0088cc;
+    font-weight: bold;
+    padding: 0 0 16px 0;
+}
+
+.b-custom-text h5 {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: 17px;
+    color: #606060;
+    padding: 0 0 12px 0;
+}
+
+.b-custom-text a {
+
+}
+
+.b-custom-text a:hover {
+	
+}
+
+.b-custom-text b {
+	
+}
+
+.b-custom-text i {
+	
+}
+
+.b-custom-text ul,
+.b-custom-text ol {
+    padding-bottom: 16px;	
+}
+
+.b-custom-text ul li {
+    list-style: inside disc;	
+}
+
+.b-custom-text ol li {
+    list-style: inside decimal;	
+}
+
+.b-custom-text p {
+    padding-bottom: 16px;	
+}
+
+.b-product__slider {
+    max-width: 340px;
+    margin: 0 auto;
+	width:100%;
+}
+
+.b-product__slider .slider-nav {
+	margin-top:4px;
+}
+
+.b-product__slider .slider-nav li {
+	margin: 0px 2px;
+}
