@@ -119,9 +119,9 @@ body {
   font-weight: normal;
   overflow-x: hidden; }
   body ::-moz-selection {
-    background-color: #feeb92; }
+    background-color: #1884cc; }
   body ::selection {
-    background-color: #feeb92; }
+    background-color: #1884cc; }
 
 .wrap {
   min-height: 100%;
@@ -444,7 +444,7 @@ a {
   font-weight: 600;
   transition: all 0.2s ease; }
   .nav__link:hover {
-    color: #e2574c; }
+    color: #1884cc; }
 	
 .nav__submenu {
 	display:none;
@@ -462,7 +462,7 @@ a {
 }
 
 .nav__item:hover > .nav__link {
-	color: #e2574c;
+	color: #1884cc;
 	text-decoration: underline;
 }
 

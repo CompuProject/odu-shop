@@ -6,7 +6,7 @@
 }
 .footer_header {
     color: #ffffff;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     font-size: 13px;
     font-weight: 400;
     line-height: 1.5;
@@ -17,8 +17,11 @@
 .footer_column_block .footer__list, .footer__list--social {
     padding-left: 0;
 }
+.footer_column_block .footer__nav-item {
+    padding-top: 5px;
+}
 .footerCP .footer__contacts-box img{
-    width: 100%;
+    width: 120%;
 }
 .footerCP .imgCP{
     padding-top: 15px;
@@ -28,4 +31,11 @@
 }
 .footerCP span,.footerCP a {
     font-size: 12px;
+}
+.timeToDevelop {
+    padding: 20px 0;
+    font-size: 32px;
+    text-align: center;
+    color: red;
+    text-transform: uppercase;
 }
