@@ -1,0 +1,1 @@
+<a href="http://compuproject.com/" target="_blank"><img src="<?=SITE_TEMPLATE_PATH?>/images/compuproject.png" alt="Compuproject"></a>

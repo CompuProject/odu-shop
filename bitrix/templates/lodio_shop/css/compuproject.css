@@ -1,3 +1,31 @@
 .contant_data_bottom {
     padding-top: 20px;
 }
+.footer_column_block {
+    display: inline-block;
+}
+.footer_header {
+    color: #ffffff;
+    padding-bottom: 15px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0px;
+    font-style: normal;
+    text-transform: uppercase;
+}
+.footer_column_block .footer__list, .footer__list--social {
+    padding-left: 0;
+}
+.footerCP .footer__contacts-box img{
+    width: 100%;
+}
+.footerCP .imgCP{
+    padding-top: 15px;
+}
+.footerCP span{
+    color: #ffffff;
+}
+.footerCP span,.footerCP a {
+    font-size: 12px;
+}
