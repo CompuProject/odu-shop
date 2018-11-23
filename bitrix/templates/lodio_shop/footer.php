@@ -25,13 +25,15 @@ IncludeTemplateLangFile(__FILE__);
 								);							
 						?></div><?
 						?><div class="footer__contacts"><?
-							?><div class="footer__contacts-box">
-							<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
-									"AREA_FILE_SHOW" => "file", 
-									"PATH" => SITE_DIR . "include/footer_logo.php"
-								)
-							);?>
-							</div><?
+							?>
+<!--                            <div class="footer__contacts-box">-->
+<!--							--><?//$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+//									"AREA_FILE_SHOW" => "file",
+//									"PATH" => SITE_DIR . "include/footer_logo.php"
+//								)
+//							);?>
+<!--							</div>-->
+                    <?
 							?><div class="footer__contacts-box"><?
 								?><p>
 									<?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
