@@ -33,7 +33,8 @@ $curDir = $APPLICATION->GetCurDir();
 		$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/css/font-awesome.css");
 		$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/css/main.css");
 		$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/css/media.css");
-		
+		$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/css/compuproject.css");
+
 		$APPLICATION->ShowHead();
 		
 	?></head><?
