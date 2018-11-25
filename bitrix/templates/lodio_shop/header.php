@@ -71,6 +71,12 @@ $curDir = $APPLICATION->GetCurDir();
 							),
 							false
 						);?>
+                <div class="headerCallBackBlock">
+                    <?$APPLICATION->IncludeComponent("compuproject:include.form",
+                        "headerCallBack",
+                        Array()
+                    );?>
+                </div>
 						<div class="header__buttons">
 							<?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.line","main-basket",Array(
 									"HIDE_ON_BASKET_PAGES" => "N",
