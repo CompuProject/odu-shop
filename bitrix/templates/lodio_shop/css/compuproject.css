@@ -39,3 +39,25 @@
     color: red;
     text-transform: uppercase;
 }
+#panel {
+    position: fixed !important;
+    width: 100% !important;
+    bottom: 0;
+    z-index: 9999;
+}
+.circleUp {
+    display: none;
+    background-color: #7a7a7a;
+    opacity: 0.4;
+    padding: 20px 25px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    cursor: pointer;
+}
+.circleUp i{
+    color: #1f1f1f;
+    font-size: 32px;
+    font-weight: 700;
+}

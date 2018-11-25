@@ -18,7 +18,8 @@ $curDir = $APPLICATION->GetCurDir();
 		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery.nice-select.min.js");
 		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery.mixitup.js");
 		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/main.js");
-		
+		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/compuproject.js");
+
 		$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/css/slick.css");
 		if (mb_internal_encoding()=="Windows-1251")
 			{

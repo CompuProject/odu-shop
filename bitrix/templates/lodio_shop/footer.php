@@ -93,6 +93,9 @@ IncludeTemplateLangFile(__FILE__);
             </div>
         </div>
     </div>
+    <div class="circleUp">
+        <i class="fa fa-angle-up"></i>
+    </div>
 </footer>
 </body>
 </html>
