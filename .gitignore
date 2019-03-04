@@ -3,4 +3,5 @@ Thumbs.db
 /.idea/
 /bitrix/*
 /upload/*
+/test/*
 !/bitrix/templates/lodio_shop/*
