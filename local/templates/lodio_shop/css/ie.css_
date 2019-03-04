@@ -1,0 +1,27 @@
+  
+  #body-wrapper{ min-width:1040px;}
+  
+	
+	ul.sf-menu{ text-align:center}
+	ul.sf-menu > li{ float:none; display:inline-block; margin:0 1px 0 0;}
+	ul.sf-menu > li:after{ display:none;}
+	ul.sf-menu>li>a, ul.sf-menu>li>span.separator{ padding:0 12px; font-size:13px;}
+	ul.sf-menu>li.lastItem{ margin-left:0}
+	#main #rt-feature .rt-container:after{left:620px;}
+	#main #rt-feature .rt-container:before{ left:300px;}
+	.projects li{ width:220px;}
+	.our_team>ul>li{ width:220px;}
+	.about_us .list1{ padding-left:20px;}
+	.about_us .catItemImageBlock{ margin-bottom:20px;}
+	.choose_us li{ width:460px;}
+	.customers_say li{ width:220px;}
+	.compare li{ width:250px}
+	.offers li{ width:300px;}
+	.services li{ width:270px;}
+	.mb8-sa4 #rt-sidebar-a{ padding-left:0}
+	
+	
+.catItemImageBlock strong, .itemImageBlock strong, .userItemImageBlock strong, .genericItemImageBlock strong, .tagItemImageBlock strong{filter: alpha(opacity = 50);}
+
+a#gantry-totop{filter: alpha(opacity = 0);}
+a#gantry-totop:hover{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(opacity=100);}

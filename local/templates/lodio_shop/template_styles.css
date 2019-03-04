@@ -1,0 +1,24 @@
+.elementdisplaynone{
+	display:none;
+}
+.blognews{
+	padding-top:12px;
+}
+.subscribe-edit{
+	padding:5px;
+}
+div.subscribe-edit .red {
+	color:red;
+}
+div.subscribe-edit .green {
+	color:green;
+}
+div.subscribe-edit .errorcolor {
+	color:red;
+}
+div.subscribe-edit .successcolor {
+	color:green;
+}
+.mf-req	{
+	color:red;
+}

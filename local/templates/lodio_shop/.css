@@ -1,0 +1,101 @@
+body a{color:#0088cc;}
+body a:hover{color:#252424;}
+a.moduleItemReadMore,
+a.k2ReadMore,
+a.moduleCustomLink{color:#ffffff;background:#0088cc;}
+a.moduleItemReadMore:hover,
+a.k2ReadMore:hover,
+a.moduleCustomLink:hover{color:#ffffff;background:#252424;}
+div.itemCommentsForm form input#submitCommentButton,
+input[type="submit"],
+button.button{color:#ffffff;background:#0088cc;}
+div.itemCommentsForm form input#submitCommentButton:hover,
+input[type="submit"]:hover,
+button.button:hover{color:#ffffff;background:#252424;}
+.sf-menu>li>a,
+.sf-menu>li>span{background:transparent;}
+.sf-menu>li>a,
+.sf-menu>li>span{color:#1a1a1a;}
+.sf-menu>li>a:hover,
+.sf-menu>li>a:active,
+.sf-menu>li.sfHover>a,
+.sf-menu>li.sfHover>span,
+.sf-menu>li:hover>span,
+.sf-menu>li.current>a,
+.sf-menu>li.current>span,
+.sf-menu>li.active>a,
+.sf-menu>li.active>span{background:#0088cc;}
+.sf-menu>li>a:hover,
+.sf-menu>li>a:active,
+.sf-menu>li.sfHover>a,
+.sf-menu>li.sfHover>span,
+.sf-menu>li:hover>span,
+.sf-menu>li.current>a,
+.sf-menu>li.current>span,
+.sf-menu>li.active>a,
+.sf-menu>li.active>span{color:#ffffff;}
+.sf-menu ul{background:#252424;}
+.sf-menu ul>li>a,
+.sf-menu ul>li>span{background:transparent;}
+.sf-menu ul>li>a,
+.sf-menu ul>li>span{color:#ffffff;}
+.sf-menu ul>li>a:hover,
+.sf-menu ul>li:hover>a,
+.sf-menu ul>li:hover>span,
+.sf-menu ul>li>a:active,
+.sf-menu ul>li.current>a,
+.sf-menu ul>li.current>span,
+.sf-menu ul>li.sfHover>a,
+.sf-menu ul>li.sfHover>span,
+.sf-menu ul>li.active>span,
+.sf-menu ul>li.active>a{background:#0088cc;}
+.sf-menu ul>li>a:hover,
+.sf-menu ul>li:hover>a,
+.sf-menu ul>li:hover>span,
+.sf-menu ul>li>a:active,
+.sf-menu ul>li.current>a,
+.sf-menu ul>li.current>span,
+.sf-menu ul>li.sfHover>a,
+.sf-menu ul>li.sfHover>span,
+.sf-menu ul>li.active>span,
+.sf-menu ul>li.active>a{color:#ffffff;}
+body{
+	font: 13px/20px "Open Sans", Arial, sans-serif;
+	/*font-family:Arial,Helvetica,sans-serif;
+	font-size:13px;
+	line-height:17px;*/
+	color:#606060;
+}
+body #rt-logo,
+body #rt-logo:hover
+{
+	max-width:360px;
+    padding: 12px 12px;
+	color: #0088cc;
+}
+
+body #rt-logo img
+{
+	max-width:160px !important;
+	max-height:40px;
+}
+
+body #rt-logo span
+{
+    display: inline-block;
+    padding-left: 16px;
+    vertical-align: top;
+    font-size: 16px;
+	max-height:40px;
+}
+
+.image-wrapper img{
+	text-align:center;
+	display:table-cell;
+	vertical-align:middle;
+	max-height:280px;
+}
+
+.search-page form{
+	text-align:center;	
+}

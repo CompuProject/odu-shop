@@ -1,0 +1,82 @@
+/*
+(function($){ 
+	var modalInit = false;
+	$(window).load(function(){
+		$('#camera-slideshow').camera({
+			alignment			: "center", //topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
+			autoAdvance			: false,	//true, false
+			mobileAutoAdvance	: false, //true, false. Auto-advancing for mobile devices
+			barDirection		: "leftToRight",	//'leftToRight', 'rightToLeft', 'topToBottom', 'bottomToTop'
+			barPosition			: "bottom",	//'bottom', 'left', 'top', 'right'
+			cols				: 6,
+			easing				: "easeInSine",	//дл€ полного списка http://jqueryui.com/demos/effect/easing.html
+			mobileEasing		: "easeInSine",	//оставьте пустым, если вы хотите, чтобы отобразить то же на мобильных устройствах и т.п.
+			fx					: "simpleFade",	
+			//'random','simpleFade', 'curtainTopLeft', 'curtainTopRight', 'curtainBottomLeft', 'curtainBottomRight', 'curtainSliceLeft', 'curtainSliceRight', 'blindCurtainTopLeft', 'blindCurtainTopRight', 'blindCurtainBottomLeft', 'blindCurtainBottomRight', 'blindCurtainSliceBottom', 'blindCurtainSliceTop', 'stampede', 'mosaic', 'mosaicReverse', 'mosaicRandom', 'mosaicSpiral', 'mosaicSpiralReverse', 'topLeftBottomRight', 'bottomRightTopLeft', 'bottomLeftTopRight', 'bottomLeftTopRight'
+			//¬ы можете также использовать более одного эффекта, просто разделите их зап€тыми: 'simpleFade, scrollRight, scrollBottom'
+			mobileFx			: "simpleFade",	//оставьте пустым, если вы хотите, чтобы отобразить то же на мобильных устройствах и т.п.
+			gridDifference		: 250,	//чтобы сделать блоки сетки медленнее это значение должно быть меньше, чем transPeriod
+			height				: "300px",	//здесь вы можете ввести пиксели (например '300px'), в процентах (по отношению к ширине слайд-шоу, например, '50% ') или "Auto"
+			imagePath			: 'images/',	//путь к папке изображений (она служит дл€ blank.gif, когда вы хотите отобразить видео)
+			hover				: false,	//true, false. Ќе доступен дл€ мобильных устройств
+			loader				: "none",	//pie, bar, none (ƒаже если вы выбираете "pie", старые браузеры, как IE8- не cмоueт отобразить его)
+			loaderColor			: "#eeeeee", 
+			loaderBgColor		: "#222222", 
+			loaderOpacity		: .8,	//0, .1, .2, .3, .4, .5, .6, .7, .8, .9, 1
+			loaderPadding		: 2,	//сколько пустых пикселей вы хотите отобразить между loader и его фоном background
+			loaderStroke		: 7,	//the thickness both of the pie loader and of the bar loader. Remember: for the pie, the loader thickness must be less than a half of the pie diameter
+			minHeight			: "",	//¬ы также можете оставить это поле пустым
+			navigation			: false,	//true or false, показывать или нет кнопки навигации
+			navigationHover		: false,	
+			mobileNavHover		: false,	
+			opacityOnGrid		: false,	
+			overlayer			: false,	
+			pagination			: false,
+			playPause			: false,	
+			pauseOnClick		: false,	
+			pieDiameter			: 38,
+			piePosition			: "rightTop",
+			portrait			: true, 
+			rows				: 4,
+			slicedCols			: 6,	
+			slicedRows			: 4,	
+			slideOn				: "next",	//next, prev, random
+			thumbnails			: true,
+			time				: 6000,	//миллисекунды между концом эффекта и началом следующего
+			transPeriod			: 500,	//продолжительность эффекта в миллисекундах
+			onEndTransition		: function() {  },	
+			onLoaded			: function() {
+				if (!modalInit)
+				{
+					SqueezeBox.assign($$('.camera-modal'), {
+						parse: 'rel'
+					});
+					modalInit = true;
+				}	
+			},	
+			onStartLoading		: function() {  },	
+			onStartTransition	: function() {  }	
+		});
+	});
+})(jQuery);
+*/
+$(document).ready(function(){
+	$('.slider-for').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  arrows: false,
+	  fade: true,
+	  asNavFor: '.slider-nav'
+	});
+	$('.slider-nav').slick({
+	  slidesToShow: 4,
+	  slidesToScroll: 1,
+	  asNavFor: '.slider-for',
+	  arrows: true,
+	  dots: false,
+	  centerMode: false,
+	  focusOnSelect: true,
+	});	
+	
+	$('.touch').touchTouch();
+})
