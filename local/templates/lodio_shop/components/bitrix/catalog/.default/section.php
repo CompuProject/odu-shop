@@ -73,20 +73,20 @@ if ($isFilter)
 	$GLOBALS[$arParams["FILTER_NAME"]] = $GLOBALS[$arParams["FILTER_NAME"]] ? $GLOBALS[$arParams["FILTER_NAME"]] : Array();
 	
 	$specialName = '';
-	if ($_REQUEST['new'] == 'Y')
+	if ($_REQUEST['new'] == 'Да')
 	{
 		$specialName = GetMessage("LODIO_CATALOG_NEW");
-		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_NEW_VALUE'] = 'Y';
+		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_NEW'] = 'Да';
 	}
-	if ($_REQUEST['hit'] == 'Y')
+	if ($_REQUEST['hit'] == 'Да')
 	{	
 		$specialName = GetMessage("LODIO_CATALOG_HIT");
-		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_HIT_VALUE'] = 'Y';
+		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_HIT'] = 'Да';
 	}
-	if ($_REQUEST['sale'] == 'Y')
+	if ($_REQUEST['sale'] == 'Да')
 	{
 		$specialName = GetMessage("LODIO_CATALOG_SALE");
-		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_SALE_VALUE'] = 'Y';
+		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_SALE'] = 'Да';
 	}
 
 ?><div class="content-wrap"><?
@@ -123,100 +123,102 @@ if ($isFilter)
 	}
 	
 	?><section class="catalog container"><?
+        if (!empty($arResult["VARIABLES"])) {
+            ?><section class="catalog__filter"><?
+            if (!$specialName)
+            {
+                $APPLICATION->IncludeComponent(
+                    "bitrix:catalog.section.list",
+                    "section_left",
+                    array(
+                        'CURRENT_ID' => $arCurSection['ID'],
+                        "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+                        "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+                        "SECTION_ID" => '',
+                        "SECTION_CODE" => '',
+                        "CACHE_TYPE" => $arParams["CACHE_TYPE"],
+                        "CACHE_TIME" => $arParams["CACHE_TIME"],
+                        "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
+                        "COUNT_ELEMENTS" => $arParams["SECTION_COUNT_ELEMENTS"],
+                        "TOP_DEPTH" => $arParams["SECTION_TOP_DEPTH"],
+                        "SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
+                        "VIEW_MODE" => $arParams["SECTIONS_VIEW_MODE"],
+                        "SHOW_PARENT_NAME" => $arParams["SECTIONS_SHOW_PARENT_NAME"],
+                        "HIDE_SECTION_NAME" => (isset($arParams["SECTIONS_HIDE_SECTION_NAME"]) ? $arParams["SECTIONS_HIDE_SECTION_NAME"] : "N"),
+                        "ADD_SECTIONS_CHAIN" => (isset($arParams["ADD_SECTIONS_CHAIN"]) ? $arParams["ADD_SECTIONS_CHAIN"] : '')
+                    ),
+                    $component,
+                    array("HIDE_ICONS" => "Y")
+                );
+            }
+            ?><a class="visible-xs-block catalog-toggle-filter" href="#"><i class="fa fa-filter"></i> <?echo GetMessage("LODIO_CATALOG_FILTER")?></a><?
+            ?><div class="visible-sm-block visible-md-block visible-lg-block filter-mobile-wrapper"><?
+            $APPLICATION->IncludeComponent(
+                "bitrix:catalog.smart.filter",
+                "visual_vertical",
+                array(
+                    "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+                    "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+                    "SECTION_ID" => $arCurSection['ID'],
+                    "FILTER_NAME" => $arParams["FILTER_NAME"],
+                    "PRICE_CODE" => $arParams["PRICE_CODE"],
+                    "CACHE_TYPE" => $arParams["CACHE_TYPE"],
+                    "CACHE_TIME" => $arParams["CACHE_TIME"],
+                    "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
+                    "SAVE_IN_SESSION" => "N",
+                    "POPUP_POSITION" => "right",
+                    "FILTER_VIEW_MODE" => 'vertical',//$arParams["FILTER_VIEW_MODE"],
+                    "XML_EXPORT" => "Y",
+                    "SECTION_TITLE" => "NAME",
+                    "SECTION_DESCRIPTION" => "DESCRIPTION",
+                    'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
+                    "TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"],
+                    'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
+                    'CURRENCY_ID' => $arParams['CURRENCY_ID'],
+                    "SEF_MODE" => $arParams["SEF_MODE"],
+                    "SEF_RULE" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["smart_filter"],
+                    "SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
+                    "PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
+                    "INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
+                ),
+                $component,
+                array('HIDE_ICONS' => 'Y')
+            );
 
-		?><section class="catalog__filter"><?
-			if (!$specialName)
-			{
-				$APPLICATION->IncludeComponent(
-					"bitrix:catalog.section.list",
-					"section_left",
-					array(
-						'CURRENT_ID' => $arCurSection['ID'],
-						"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-						"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-						"SECTION_ID" => '',
-						"SECTION_CODE" => '',
-						"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-						"CACHE_TIME" => $arParams["CACHE_TIME"],
-						"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-						"COUNT_ELEMENTS" => $arParams["SECTION_COUNT_ELEMENTS"],
-						"TOP_DEPTH" => $arParams["SECTION_TOP_DEPTH"],
-						"SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
-						"VIEW_MODE" => $arParams["SECTIONS_VIEW_MODE"],
-						"SHOW_PARENT_NAME" => $arParams["SECTIONS_SHOW_PARENT_NAME"],
-						"HIDE_SECTION_NAME" => (isset($arParams["SECTIONS_HIDE_SECTION_NAME"]) ? $arParams["SECTIONS_HIDE_SECTION_NAME"] : "N"),
-						"ADD_SECTIONS_CHAIN" => (isset($arParams["ADD_SECTIONS_CHAIN"]) ? $arParams["ADD_SECTIONS_CHAIN"] : '')
-					),
-					$component,
-					array("HIDE_ICONS" => "Y")
-				);
-			}
-			?><a class="visible-xs-block catalog-toggle-filter" href="#"><i class="fa fa-filter"></i> <?echo GetMessage("LODIO_CATALOG_FILTER")?></a><?
-			?><div class="visible-sm-block visible-md-block visible-lg-block filter-mobile-wrapper"><?
-			$APPLICATION->IncludeComponent(
-				"bitrix:catalog.smart.filter",
-				"visual_vertical",
-				array(
-					"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-					"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-					"SECTION_ID" => $arCurSection['ID'],
-					"FILTER_NAME" => $arParams["FILTER_NAME"],
-					"PRICE_CODE" => $arParams["PRICE_CODE"],
-					"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-					"CACHE_TIME" => $arParams["CACHE_TIME"],
-					"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-					"SAVE_IN_SESSION" => "N",
-					"POPUP_POSITION" => "right",
-					"FILTER_VIEW_MODE" => 'vertical',//$arParams["FILTER_VIEW_MODE"],
-					"XML_EXPORT" => "Y",
-					"SECTION_TITLE" => "NAME",
-					"SECTION_DESCRIPTION" => "DESCRIPTION",
-					'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
-					"TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"],
-					'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
-					'CURRENCY_ID' => $arParams['CURRENCY_ID'],
-					"SEF_MODE" => $arParams["SEF_MODE"],
-					"SEF_RULE" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["smart_filter"],
-					"SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
-					"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
-					"INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
-				),
-				$component,
-				array('HIDE_ICONS' => 'Y')
-			);
-		?></section><?
-/*
-		$arSortData = Array(
-			'POPULAR' => Array(
-				'DIRECTION' => $_REQUEST['sort-by'] == 'POPULAR' && $_REQUEST['sort-order'] == 'DESC' ? 'ASC' : 'DESC',
-				'ARROW' => $_REQUEST['sort-by'] == 'POPULAR' && $_REQUEST['sort-order'] == 'ASC' ? 'down' : 'up',
-				'FIELD' => 'shows',
-			),
-			'NAME' => Array(
-				'DIRECTION' => $_REQUEST['sort-by'] == 'NAME' && $_REQUEST['sort-order'] == 'ASC' ? 'DESC' : 'ASC',
-				'ARROW' => $_REQUEST['sort-by'] == 'NAME' && $_REQUEST['sort-order'] == 'ASC' ? 'down' : 'up',
-				'FIELD' => 'name',
-			),
-			'PRICE' => Array(
-				'DIRECTION' => $_REQUEST['sort-by'] == 'PRICE' && $_REQUEST['sort-order'] == 'ASC' ? 'DESC' : 'ASC',
-				'ARROW' => $_REQUEST['sort-by'] == 'PRICE' && $_REQUEST['sort-order'] == 'ASC' ? 'down' : 'up',
-				'FIELD' => 'property_MINIMUM_PRICE',
-			),			
-		)
+            ?></section><?
 
-			?><ul class="catalog-sort"><?
-				?><li><?echo GetMessage("LODIO_CATALOG_SORT")?>:</li><?
-				?><li><a <?if ($_REQUEST['sort-by'] == 'POPULAR' || !$_REQUEST['sort-by']):?>class="sort-active" <?endif?>href="<?=$APPLICATION->GetCurPageParam("sort-by=POPULAR&sort-order=".$arSortData['POPULAR']['DIRECTION'], array("sort-by", "sort-order"))?>"><?echo GetMessage("LODIO_CATALOG_SORT_POPULAR")?> <i class="fa fa-angle-<?=$arSortData['POPULAR']['ARROW']?>"></i></a></li><?
-				?><li><a <?if ($_REQUEST['sort-by'] == 'NAME'):?>class="sort-active" <?endif?>href="<?=$APPLICATION->GetCurPageParam("sort-by=NAME&sort-order=".$arSortData['NAME']['DIRECTION'], array("sort-by", "sort-order"))?>"><?echo GetMessage("LODIO_CATALOG_SORT_NAME")?> <i class="fa fa-angle-<?=$arSortData['NAME']['ARROW']?>"></i></a></li><?
-				?><li><a <?if ($_REQUEST['sort-by'] == 'PRICE'):?>class="sort-active" <?endif?>href="<?=$APPLICATION->GetCurPageParam("sort-by=PRICE&sort-order=".$arSortData['PRICE']['DIRECTION'], array("sort-by", "sort-order"))?>"><?echo GetMessage("LODIO_CATALOG_SORT_PRICE")?> <i class="fa fa-angle-<?=$arSortData['PRICE']['ARROW']?>"></i></a></li><?
-			?></ul><?
+            $arSortData = Array(
+                'POPULAR' => Array(
+                    'DIRECTION' => $_REQUEST['sort-by'] == 'POPULAR' && $_REQUEST['sort-order'] == 'DESC' ? 'ASC' : 'DESC',
+                    'ARROW' => $_REQUEST['sort-by'] == 'POPULAR' && $_REQUEST['sort-order'] == 'ASC' ? 'down' : 'up',
+                    'FIELD' => 'shows',
+                ),
+                'NAME' => Array(
+                    'DIRECTION' => $_REQUEST['sort-by'] == 'NAME' && $_REQUEST['sort-order'] == 'ASC' ? 'DESC' : 'ASC',
+                    'ARROW' => $_REQUEST['sort-by'] == 'NAME' && $_REQUEST['sort-order'] == 'ASC' ? 'down' : 'up',
+                    'FIELD' => 'name',
+                ),
+                'PRICE' => Array(
+                    'DIRECTION' => $_REQUEST['sort-by'] == 'PRICE' && $_REQUEST['sort-order'] == 'ASC' ? 'DESC' : 'ASC',
+                    'ARROW' => $_REQUEST['sort-by'] == 'PRICE' && $_REQUEST['sort-order'] == 'ASC' ? 'down' : 'up',
+                    'FIELD' => 'property_MINIMUM_PRICE',
+                ),
+            )
 
-			if ($_REQUEST['sort-by'] && $_REQUEST['sort-order'])
-			{
-				$arParams["ELEMENT_SORT_FIELD2"] = $arSortData[$_REQUEST['sort-by']]['FIELD'];
-				$arParams["ELEMENT_SORT_ORDER2"] = $_REQUEST['sort-order'];		
-			}
-*/
+            ?><ul class="catalog-sort"><?
+            ?><li><?echo GetMessage("LODIO_CATALOG_SORT")?>:</li><?
+            ?><li><a <?if ($_REQUEST['sort-by'] == 'POPULAR' || !$_REQUEST['sort-by']):?>class="sort-active" <?endif?>href="<?=$APPLICATION->GetCurPageParam("sort-by=POPULAR&sort-order=".$arSortData['POPULAR']['DIRECTION'], array("sort-by", "sort-order"))?>"><?echo GetMessage("LODIO_CATALOG_SORT_POPULAR")?> <i class="fa fa-angle-<?=$arSortData['POPULAR']['ARROW']?>"></i></a></li><?
+            ?><li><a <?if ($_REQUEST['sort-by'] == 'NAME'):?>class="sort-active" <?endif?>href="<?=$APPLICATION->GetCurPageParam("sort-by=NAME&sort-order=".$arSortData['NAME']['DIRECTION'], array("sort-by", "sort-order"))?>"><?echo GetMessage("LODIO_CATALOG_SORT_NAME")?> <i class="fa fa-angle-<?=$arSortData['NAME']['ARROW']?>"></i></a></li><?
+            ?><li><a <?if ($_REQUEST['sort-by'] == 'PRICE'):?>class="sort-active" <?endif?>href="<?=$APPLICATION->GetCurPageParam("sort-by=PRICE&sort-order=".$arSortData['PRICE']['DIRECTION'], array("sort-by", "sort-order"))?>"><?echo GetMessage("LODIO_CATALOG_SORT_PRICE")?> <i class="fa fa-angle-<?=$arSortData['PRICE']['ARROW']?>"></i></a></li><?
+            ?></ul><?
+
+            if ($_REQUEST['sort-by'] && $_REQUEST['sort-order'])
+            {
+                $arParams["ELEMENT_SORT_FIELD2"] = $arSortData[$_REQUEST['sort-by']]['FIELD'];
+                $arParams["ELEMENT_SORT_ORDER2"] = $_REQUEST['sort-order'];
+            }
+        }
+
 		$intSectionID = $APPLICATION->IncludeComponent(
 			"bitrix:catalog.section",
 			"main-catalog",

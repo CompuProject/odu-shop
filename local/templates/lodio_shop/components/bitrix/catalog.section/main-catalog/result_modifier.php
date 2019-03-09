@@ -130,9 +130,9 @@ foreach($arResult['ITEMS'] as &$arItemP)
 	
 	//hit - sale - new
 	$arPromo = Array();
-	if ($arItemP['PROPERTIES']['HIT']['VALUE'] == 'Y') $arPromo[] = 'HIT';
-	if ($arItemP['PROPERTIES']['NEW']['VALUE'] == 'Y') $arPromo[] = 'NEW';
-	if ($arItemP['PROPERTIES']['SALE']['VALUE'] == 'Y') $arPromo[] = 'SALE';
+	if ($arItemP['PROPERTIES']['HIT']['VALUE'] == 'Да') $arPromo[] = 'HIT';
+	if ($arItemP['PROPERTIES']['NEW']['VALUE'] == 'Да') $arPromo[] = 'NEW';
+	if ($arItemP['PROPERTIES']['SALE']['VALUE'] == 'Да') $arPromo[] = 'SALE';
 	$arItemP['PROMO'] = $arPromo;
 }
 

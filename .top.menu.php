@@ -2,14 +2,14 @@
 $aMenuLinks = Array(
 	Array(
 		"новинки",
-		SITE_DIR . "catalog/?new=Y",
+		SITE_DIR . "catalog/?new=Да",
 		Array(),
 		Array(),
 		""
 	),
 	Array(
 		"распродажа",
-		SITE_DIR . "catalog/?sale=Y",
+		SITE_DIR . "catalog/?sale=Да",
 		Array(),
 		Array(),
 		""
