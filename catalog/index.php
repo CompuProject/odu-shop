@@ -47,8 +47,8 @@ $APPLICATION->SetTitle("");
 		"DETAIL_META_DESCRIPTION" => "-",
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_OFFERS_FIELD_CODE" => array("NAME",""),
-		"DETAIL_OFFERS_PROPERTY_CODE" => array("SIZE","COLOR",""),
-		"DETAIL_PROPERTY_CODE" => array("BRAND","COMPOSITION","COUNTRY",""),
+		"DETAIL_OFFERS_PROPERTY_CODE" => array("SIZE",""), // Свойства торговых предложений
+		"DETAIL_PROPERTY_CODE" => array("BRAND","COMPOSITION","COUNTRY", "COLOR","CML2_ARTICLE"), // Свойства выводимые в карточке товара
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DETAIL_SET_VIEWED_IN_COMPONENT" => "N",
 		"DETAIL_SHOW_BASIS_PRICE" => "Y",
