@@ -123,7 +123,7 @@ if ($isFilter)
 	}
 	
 	?><section class="catalog container"><?
-		/*
+
 		?><section class="catalog__filter"><?
 			if (!$specialName)
 			{
@@ -185,8 +185,7 @@ if ($isFilter)
 				array('HIDE_ICONS' => 'Y')
 			);
 		?></section><?
-		*/
-		/*
+/*
 		$arSortData = Array(
 			'POPULAR' => Array(
 				'DIRECTION' => $_REQUEST['sort-by'] == 'POPULAR' && $_REQUEST['sort-order'] == 'DESC' ? 'ASC' : 'DESC',
@@ -217,7 +216,7 @@ if ($isFilter)
 				$arParams["ELEMENT_SORT_FIELD2"] = $arSortData[$_REQUEST['sort-by']]['FIELD'];
 				$arParams["ELEMENT_SORT_ORDER2"] = $_REQUEST['sort-order'];		
 			}
-		*/
+*/
 		$intSectionID = $APPLICATION->IncludeComponent(
 			"bitrix:catalog.section",
 			"main-catalog",
