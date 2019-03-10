@@ -129,6 +129,13 @@
     .content-wrap .filter-box {
         margin-bottom: 5px;
     }
+    .catalog-toggle-filter {
+        background-color: #105378;
+        border-color: #105378;
+    }
+    .catalog-toggle-filter:hover {
+        color: #105378;
+    }
 }
 @media (max-width: 568px) {
     .header__buttons {
