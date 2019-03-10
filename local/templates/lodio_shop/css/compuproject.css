@@ -69,3 +69,31 @@
     color: #105378;
     font-size: 56px;
 }
+@media (max-width: 991px) {
+    .footer__row {
+        padding: 45px 15px;
+    }
+    .footer__nav .footer_column_block:first-child {
+        margin-right: 15px;
+    }
+    .footer__contacts-box .footer_header {
+        text-align: center;
+    }
+    .footer__contacts-box {
+        font-size: 1.3em;
+    }
+    .footer__contacts-box span {
+        font-size: 1em;
+        text-align: center;
+    }
+    .footerCP .footer__contacts-box img {
+        width: 100%;
+    }
+    .footer__list.footer__list--social {
+        margin-top: 10px;
+    }
+    .footer__list-item .footer__social-icon {
+        width: 40px;
+        font-size: 30px;
+    }
+}

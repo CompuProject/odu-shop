@@ -96,6 +96,11 @@ IncludeTemplateLangFile(__FILE__);
     <div class="circleUp">
         <i class="fa fa-angle-up"></i>
     </div>
+    <? $APPLICATION->IncludeComponent("compuproject:stickyAuthBlock",
+        "",
+        Array(),
+        false
+    ); ?>
 </footer>
 </body>
 </html>
