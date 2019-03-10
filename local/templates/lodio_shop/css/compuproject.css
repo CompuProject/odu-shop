@@ -79,6 +79,20 @@
 .mobile-menu .mobile-menu__btn[href="#mobileMenuAuth"] i{
     font-size: 1.5em;
 }
+.sale-personal-section-index-block.bx-theme-red {
+    background: none;
+    background-color: #105378;
+}
+.catalog__filter .bx_filter .bx_filter_search_button {
+    background: #105378;
+    border-color: #105378;
+}
+.catalog__filter .bx_filter .bx_filter_search_button:hover {
+    background: #ffffff;
+    border: 1px solid #105378;
+    margin-right: 5px;
+    color: #105378!important;
+}
 @media (max-width: 991px) {
     .footer__row {
         padding: 45px 15px;
