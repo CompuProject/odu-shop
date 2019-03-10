@@ -11,5 +11,5 @@ if (!empty($arResult))
 			?><li class="mobile-nav__item"><a href="<?=$arItem["LINK"]?>" class="nav__link"><?=$arItem["TEXT"]?></a></li><?	
 			}
 		}
-	?></ul><?	
+	?></ul><?
 }

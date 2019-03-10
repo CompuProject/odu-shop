@@ -69,6 +69,16 @@
     color: #105378;
     font-size: 56px;
 }
+.nav__link.blue {
+    text-decoration: underline;
+    color: #105378;
+}
+.mobile-menu .mobile-menu__btn[href="#mobileMenuAuth"] {
+    line-height: 50px;
+}
+.mobile-menu .mobile-menu__btn[href="#mobileMenuAuth"] i{
+    font-size: 1.5em;
+}
 @media (max-width: 991px) {
     .footer__row {
         padding: 45px 15px;
@@ -95,5 +105,10 @@
     .footer__list-item .footer__social-icon {
         width: 40px;
         font-size: 30px;
+    }
+}
+@media (max-width: 568px) {
+    .header__buttons {
+        text-align: right;
     }
 }
