@@ -120,6 +120,15 @@
         width: 40px;
         font-size: 30px;
     }
+    .catalog__filter-title {
+        display: none;
+    }
+    .filter-box-left {
+        display: none;
+    }
+    .content-wrap .filter-box {
+        margin-bottom: 5px;
+    }
 }
 @media (max-width: 568px) {
     .header__buttons {

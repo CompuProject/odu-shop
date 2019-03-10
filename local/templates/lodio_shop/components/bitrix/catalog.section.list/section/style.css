@@ -1,0 +1,25 @@
+.sectionActiveBtnBlock {
+    display: none;
+}
+@media (max-width: 991px) {
+    .sectionActiveBtnBlock {
+        display: block;
+        text-align: center;
+        padding: 0 5px;
+    }
+    .sectionActiveBtn {
+        padding: 10px 0;
+        border: 1px solid #105378;
+        background-color: #105378;
+        color: #ffffff;
+        font-size: 1.3em;
+        width: 100%;
+    }
+    .sectionActiveBtn.active {
+        background-color: #ffffff;
+        color: #105378;
+    }
+    .content-wrap .filter-box {
+        display: none;
+    }
+}

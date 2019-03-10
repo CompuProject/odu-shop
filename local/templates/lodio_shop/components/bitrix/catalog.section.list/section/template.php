@@ -14,6 +14,11 @@ $this->setFrameMode(true);
 
 if ($arResult['SECTIONS'])
 {
+    ?>
+    <div class="sectionActiveBtnBlock">
+        <button class="sectionActiveBtn"><i class="fa fa-plus" aria-hidden="true"></i> Показать каталоги</button>
+    </div>
+    <?
 	?><section class="filter-box"><?
 		foreach ($arResult['SECTIONS'] as $arSection)
 		{
