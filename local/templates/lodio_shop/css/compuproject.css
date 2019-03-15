@@ -151,6 +151,9 @@
     .catalog-toggle-filter:hover {
         color: #105378;
     }
+    .catalog-sort .separator {
+        display: none;
+    }
 }
 @media (max-width: 568px) {
     .header__buttons {

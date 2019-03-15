@@ -215,18 +215,18 @@ if ($isFilter)
             ?><li><a class="catalogHit <?if($_REQUEST['hit'] == 'Да'):?>active<?endif?>" href="<?=$APPLICATION->GetCurPageParam("hit=Да")?>">Хит продаж</a></li><?
             ?><li><a class="catalogNew <?if($_REQUEST['new'] == 'Да'):?>active<?endif?>" href="<?=$APPLICATION->GetCurPageParam("new=Да")?>">Новинки</a></li><?
             ?><li><a class="catalogSale <?if($_REQUEST['sale'] == 'Да'):?>active<?endif?>" href="<?=$APPLICATION->GetCurPageParam("sale=Да")?>">Скидки</a></li><?
-            ?><li><a class="clearCatalogSpecial" href="<?
-            if($_REQUEST['hit'] == 'Да' || $_REQUEST['new'] == 'Да' || $_REQUEST['sale'] == 'Да'){
-                echo $_SERVER["REDIRECT_URL"];
-            } else{
-                echo $_SERVER["REQUEST_URI"];
-            }
-            ?>">Очистить</a></li><?
             ?><li class="separator">|</li><?
             ?><li><?echo GetMessage("LODIO_CATALOG_SORT")?>:</li><?
             ?><li><a <?if ($_REQUEST['sort-by'] == 'POPULAR' || !$_REQUEST['sort-by']):?>class="sort-active" <?endif?>href="<?=$APPLICATION->GetCurPageParam("sort-by=POPULAR&sort-order=".$arSortData['POPULAR']['DIRECTION'], array("sort-by", "sort-order"))?>"><?echo GetMessage("LODIO_CATALOG_SORT_POPULAR")?> <i class="fa fa-angle-<?=$arSortData['POPULAR']['ARROW']?>"></i></a></li><?
             ?><li><a <?if ($_REQUEST['sort-by'] == 'NAME'):?>class="sort-active" <?endif?>href="<?=$APPLICATION->GetCurPageParam("sort-by=NAME&sort-order=".$arSortData['NAME']['DIRECTION'], array("sort-by", "sort-order"))?>"><?echo GetMessage("LODIO_CATALOG_SORT_NAME")?> <i class="fa fa-angle-<?=$arSortData['NAME']['ARROW']?>"></i></a></li><?
             ?><li><a <?if ($_REQUEST['sort-by'] == 'PRICE'):?>class="sort-active" <?endif?>href="<?=$APPLICATION->GetCurPageParam("sort-by=PRICE&sort-order=".$arSortData['PRICE']['DIRECTION'], array("sort-by", "sort-order"))?>"><?echo GetMessage("LODIO_CATALOG_SORT_PRICE")?> <i class="fa fa-angle-<?=$arSortData['PRICE']['ARROW']?>"></i></a></li><?
+            ?><li><a class="clearCatalogSpecial" href="<?
+            if($_REQUEST['hit'] == 'Да' || $_REQUEST['new'] == 'Да' || $_REQUEST['sale'] == 'Да' || $_REQUEST['sort-by'] == 'POPULAR' || $_REQUEST['sort-by'] == 'NAME' || $_REQUEST['sort-by'] == 'PRICE'){
+                echo $_SERVER["REDIRECT_URL"];
+            } else{
+                echo $_SERVER["REQUEST_URI"];
+            }
+            ?>">Очистить</a></li><?
             ?></ul><?
 
             if ($_REQUEST['sort-by'] && $_REQUEST['sort-order'])
