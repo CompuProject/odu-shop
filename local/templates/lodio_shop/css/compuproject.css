@@ -93,6 +93,21 @@
     margin-right: 5px;
     color: #105378!important;
 }
+.catalog-sort .catalogNew.active {
+    color: #26a1bb;
+    font-weight: bold;
+}
+.catalog-sort .catalogHit.active {
+    color: #9ED146;
+    font-weight: bold;
+}
+.catalog-sort .catalogSale.active {
+    color: #e2574c;
+    font-weight: bold;
+}
+.catalog-sort .clearCatalogSpecial {
+    font-weight: bold;
+}
 @media (max-width: 991px) {
     .footer__row {
         padding: 45px 15px;

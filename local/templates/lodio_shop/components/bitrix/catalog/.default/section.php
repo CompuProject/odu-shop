@@ -71,7 +71,7 @@ if ($isFilter)
 }
 
 	$GLOBALS[$arParams["FILTER_NAME"]] = $GLOBALS[$arParams["FILTER_NAME"]] ? $GLOBALS[$arParams["FILTER_NAME"]] : Array();
-	
+
 	$specialName = '';
 	if ($_REQUEST['new'] == 'Да')
 	{
@@ -79,7 +79,7 @@ if ($isFilter)
 		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_NEW'] = 'Да';
 	}
 	if ($_REQUEST['hit'] == 'Да')
-	{	
+	{
 		$specialName = GetMessage("LODIO_CATALOG_HIT");
 		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_HIT'] = 'Да';
 	}
@@ -89,13 +89,18 @@ if ($isFilter)
 		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_SALE'] = 'Да';
 	}
 
+	if ($_REQUEST['brand'] == 'GerryWebber') {
+        $specialName = GetMessage("LODIO_CATALOG_BRAND");
+        $GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_BRAND_VALUE'] = 'Производитель';
+    }
+
 ?><div class="content-wrap"><?
 	?><h1 class="title title--cat"><?if ($specialName):?><?=$specialName?><?else:?><?$APPLICATION->ShowViewContent('section_name');?><?endif?></h1><?
 	if (!$arResult["VARIABLES"]["SECTION_ID"] && !$arResult["VARIABLES"]["SECTION_ID"])
 	{
 		$arParams["SECTION_TOP_DEPTH"] = 1;
 	}
-	
+
 	if (!$specialName)
 	{
 		$APPLICATION->IncludeComponent(
@@ -121,7 +126,7 @@ if ($isFilter)
 			array("HIDE_ICONS" => "Y")
 		);
 	}
-	
+
 	?><section class="catalog container"><?
         if (!empty($arResult["VARIABLES"])) {
             ?><section class="catalog__filter"><?
@@ -206,6 +211,18 @@ if ($isFilter)
             )
 
             ?><ul class="catalog-sort"><?
+            ?><li><?echo GetMessage("LODIO_CATALOG_SPECIAL")?>:</li><?
+            ?><li><a class="catalogHit <?if($_REQUEST['hit'] == 'Да'):?>active<?endif?>" href="<?=$APPLICATION->GetCurPageParam("hit=Да")?>">Хит продаж</a></li><?
+            ?><li><a class="catalogNew <?if($_REQUEST['new'] == 'Да'):?>active<?endif?>" href="<?=$APPLICATION->GetCurPageParam("new=Да")?>">Новинки</a></li><?
+            ?><li><a class="catalogSale <?if($_REQUEST['sale'] == 'Да'):?>active<?endif?>" href="<?=$APPLICATION->GetCurPageParam("sale=Да")?>">Скидки</a></li><?
+            ?><li><a class="clearCatalogSpecial" href="<?
+            if($_REQUEST['hit'] == 'Да' || $_REQUEST['new'] == 'Да' || $_REQUEST['sale'] == 'Да'){
+                echo $_SERVER["REDIRECT_URL"];
+            } else{
+                echo $_SERVER["REQUEST_URI"];
+            }
+            ?>">Очистить</a></li><?
+            ?><li class="separator">|</li><?
             ?><li><?echo GetMessage("LODIO_CATALOG_SORT")?>:</li><?
             ?><li><a <?if ($_REQUEST['sort-by'] == 'POPULAR' || !$_REQUEST['sort-by']):?>class="sort-active" <?endif?>href="<?=$APPLICATION->GetCurPageParam("sort-by=POPULAR&sort-order=".$arSortData['POPULAR']['DIRECTION'], array("sort-by", "sort-order"))?>"><?echo GetMessage("LODIO_CATALOG_SORT_POPULAR")?> <i class="fa fa-angle-<?=$arSortData['POPULAR']['ARROW']?>"></i></a></li><?
             ?><li><a <?if ($_REQUEST['sort-by'] == 'NAME'):?>class="sort-active" <?endif?>href="<?=$APPLICATION->GetCurPageParam("sort-by=NAME&sort-order=".$arSortData['NAME']['DIRECTION'], array("sort-by", "sort-order"))?>"><?echo GetMessage("LODIO_CATALOG_SORT_NAME")?> <i class="fa fa-angle-<?=$arSortData['NAME']['ARROW']?>"></i></a></li><?
@@ -224,7 +241,7 @@ if ($isFilter)
 			"main-catalog",
 			array(
 				"CATALOG_TEMPLATE" => "Y",
-			
+
 				"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 				"IBLOCK_ID" => $arParams["IBLOCK_ID"],
 				"ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
@@ -290,9 +307,9 @@ if ($isFilter)
 				"SECTION_ID" => $arResult["VARIABLES"]["SECTION_ID"],
 				"SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
 				"SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
-				
+
 				"SHOW_ALL_WO_SECTION" => "Y",
-				
+
 				"DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["element"],
 				"USE_MAIN_ELEMENT_SECTION" => $arParams["USE_MAIN_ELEMENT_SECTION"],
 				'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
@@ -302,7 +319,7 @@ if ($isFilter)
 				'LABEL_PROP' => $arParams['LABEL_PROP'],
 				'ADD_PICT_PROP' => $arParams['ADD_PICT_PROP'],
 				'PRODUCT_DISPLAY_MODE' => $arParams['PRODUCT_DISPLAY_MODE'],
-				
+
 				"QUICK_VIEW_PROPERTIES" => $arParams['QUICK_VIEW_PROPERTIES'],
 
 				'OFFER_ADD_PICT_PROP' => $arParams['OFFER_ADD_PICT_PROP'],
@@ -326,12 +343,12 @@ if ($isFilter)
 			),
 			$component
 		);
-		
+
 		//GetMessage('LODIO_CATALOG_SALE');
 		if ($specialName)
 		{
 			$APPLICATION->SetTitle($specialName);
-			$APPLICATION->SetPageProperty("title", $specialName);			
+			$APPLICATION->SetPageProperty("title", $specialName);
 		}
 	?></section><?
 ?></div><?
