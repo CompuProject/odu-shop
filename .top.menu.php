@@ -8,7 +8,7 @@ $aMenuLinks = Array(
 		""
 	),
 	Array(
-		"распродажа",
+		"скидки",
 		SITE_DIR . "catalog/?sale=Да",
 		Array(),
 		Array(),
