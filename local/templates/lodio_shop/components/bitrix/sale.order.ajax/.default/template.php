@@ -426,6 +426,12 @@ $messages = \Bitrix\Main\Localization\Loc::loadLanguageFile(__FILE__);
 			setTimeout(function(){bx_counter_waiter(++i)}, 100);
 	})();
 	<? endif ?>
+    $("#bx-soa-properties").ready(function () {
+        $(this).find('input[autocomplete=tel]').mask("+7(999)999-99-99");
+        $(this).find('input[autocomplete=tel]').click(function () {
+            $(this).focus();
+        });
+    });
 </script>
 <? endif ?>
 	</div>
