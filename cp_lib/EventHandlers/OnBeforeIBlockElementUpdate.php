@@ -19,8 +19,10 @@ class CP_ActivateElementUpdater
         }
         $activity_key = key ($arFields["PROPERTY_VALUES"]["95"]);
         $parent_catalog_key = key($arFields["PROPERTY_VALUES"]["96"]);
-        if ($arFields["PROPERTY_VALUES"]["95"][$activity_key]["VALUE"] != '') {
+        if ($arFields["PROPERTY_VALUES"]["95"][$activity_key]["VALUE"] == 'Да') {
             $arFields["ACTIVE"] = static::$activnost[$arFields["PROPERTY_VALUES"]["95"][$activity_key]["VALUE"]];
+        } else {
+            $arFields["ACTIVE"] = "N";
         }
         if (!empty($arFields["IBLOCK_SECTION"])) {
             $section_key = key($arFields["IBLOCK_SECTION"]);
