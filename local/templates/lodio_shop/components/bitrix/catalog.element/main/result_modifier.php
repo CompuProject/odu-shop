@@ -13,7 +13,7 @@ if ($previewPictureId)
 		'THUMB' => $arThumbPicture['src']
 	);
 }
-foreach ($arResult['PROPERTIES']['IMAGES']['VALUE'] as $imgId)
+foreach ($arResult['PROPERTIES']['MORE_PHOTO']['VALUE'] as $imgId)
 {
 	$arSmallPicture = CFile::ResizeImageGet($imgId, array('width'=>565, 'height'=>565), BX_RESIZE_IMAGE_EXACT, true);
 	$arThumbPicture = CFile::ResizeImageGet($imgId, array('width'=>100, 'height'=>100), BX_RESIZE_IMAGE_EXACT, true); 
