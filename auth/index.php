@@ -6,7 +6,12 @@ if (isset($_REQUEST["backurl"]) && strlen($_REQUEST["backurl"])>0)
 //	LocalRedirect($backurl);
 	LocalRedirect("/personal");
 
-$APPLICATION->SetTitle("Авторизация");
+if ($_REQUEST["register"] == "yes") {
+    $APPLICATION->SetTitle("Регистрация");
+} else {
+    $APPLICATION->SetTitle("Авторизация");
+}
+
 ?>
 <p>Вы зарегистрированы и успешно авторизовались.</p>
  
