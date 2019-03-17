@@ -108,6 +108,14 @@
 .catalog-sort .clearCatalogSpecial {
     font-weight: bold;
 }
+.qw-price-url {
+    color: #105378;
+    border-color: #105378;
+}
+.qw-price-url:hover {
+    color: #ffffff;
+    background-color: #105378;
+}
 @media (max-width: 991px) {
     .footer__row {
         padding: 45px 15px;
