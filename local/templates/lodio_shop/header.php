@@ -24,6 +24,7 @@ $curDir = $APPLICATION->GetCurDir();
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.mixitup.js");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/main.js");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/compuproject.js");
+    ?><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script><?
 
     $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . "/css/slick.css");
     if (mb_internal_encoding() == "Windows-1251") {
