@@ -14,7 +14,6 @@ use Bitrix\Main\Localization\Loc;
 	{
 		ShowNote(Loc::getMessage('PROFILE_DATA_SAVED'));
 	}
-
 	?>
 	<form method="post" name="form1" action="<?=$APPLICATION->GetCurUri()?>" enctype="multipart/form-data" role="form">
 		<?=$arResult["BX_SESSION_CHECK"]?>
@@ -85,6 +84,12 @@ use Bitrix\Main\Localization\Loc;
 					<input class="input form-control" type="text" name="EMAIL" id="main-profile-email" value="<?=$arResult["arUser"]["EMAIL"]?>" />
 				</div>
 			</div>
+            <div class="form-group">
+                <label class="main-profile-form-label col-sm-12 col-md-3 text-md-right" for="main-profile-phone"><?=Loc::getMessage('PHONE')?></label>
+                <div class="col-sm-12">
+                    <input class="input form-control" type="text" name="PERSONAL_PHONE" id="main-profile-phone" value="<?=$arResult["arUser"]["PERSONAL_PHONE"]?>" />
+                </div>
+            </div>
 			<?
 			if($arResult["arUser"]["EXTERNAL_AUTH_ID"] == '')
 			{
@@ -118,6 +123,14 @@ use Bitrix\Main\Localization\Loc;
 			<input type="submit" class="btn btn-themes btn-default btn-md"  name="reset" value="<?echo GetMessage("MAIN_RESET")?>">
 		</p>
 	</form>
+    <script>
+        $(document).ready(function () {
+            $("input[name=PERSONAL_PHONE]").mask('+7(999)999-99-99');
+            $("input[name=PERSONAL_PHONE]").click(function () {
+                $(this).focus();
+            });
+        });
+    </script>
 	<div class="col-sm-12 main-profile-social-block">
 		<?
 		if ($arResult["SOCSERV_ENABLED"])

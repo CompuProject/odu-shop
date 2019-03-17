@@ -116,6 +116,9 @@
     color: #ffffff;
     background-color: #105378;
 }
+.cp_register .form-group.hidden {
+    display: none;
+}
 @media (max-width: 991px) {
     .footer__row {
         padding: 45px 15px;

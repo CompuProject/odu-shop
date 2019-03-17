@@ -6,6 +6,7 @@ $MESS['NAME'] = "Имя:";
 $MESS['LAST_NAME'] = "Фамилия:";
 $MESS['SECOND_NAME'] = "Отчество:";
 $MESS['EMAIL'] = "E-Mail:";
+$MESS['PHONE'] = "Телефон:";
 $MESS['MAIN_RESET'] = "Отмена";
 $MESS['LOGIN'] = "Логин (мин. 3 символа):";
 $MESS['NEW_PASSWORD'] = "Новый пароль (мин. 6 символов):";

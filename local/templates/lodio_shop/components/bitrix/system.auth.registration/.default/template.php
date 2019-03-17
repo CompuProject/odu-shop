@@ -32,7 +32,7 @@ ShowMessage($arParams["~AUTH_RESULT"]);
 	<div class="form-group"><?echo GetMessage("AUTH_EMAIL_WILL_BE_SENT")?></div>
 <?endif?>
 <noindex>
-<form method="post" action="<?=$arResult["AUTH_URL"]?>" name="bform" enctype="multipart/form-data">
+<form class="cp_register" method="post" action="<?=$arResult["AUTH_URL"]?>" name="bform" enctype="multipart/form-data">
 <?
 if (strlen($arResult["BACKURL"]) > 0)
 {
@@ -44,15 +44,21 @@ if (strlen($arResult["BACKURL"]) > 0)
 	<input type="hidden" name="AUTH_FORM" value="Y" />
 	<input type="hidden" name="TYPE" value="REGISTRATION" />
 
-	<div class="form-group">
-		<input type="text" name="USER_NAME" maxlength="50" value="<?=$arResult["USER_NAME"]?>" class="form-control bx-auth-input" placeholder="<?=GetMessage("AUTH_NAME")?>" />
-	</div>
-	<div class="form-group">
-		<input type="text" name="USER_LAST_NAME" maxlength="50" value="<?=$arResult["USER_LAST_NAME"]?>" class="form-control bx-auth-input" placeholder="<?=GetMessage("AUTH_LAST_NAME")?>" />
-	</div>
-	<div class="form-group">
+<!--	<div class="form-group">-->
+<!--		<input type="text" name="USER_NAME" maxlength="50" value="--><?//=$arResult["USER_NAME"]?><!--" class="form-control bx-auth-input" placeholder="--><?//=GetMessage("AUTH_NAME")?><!--" />-->
+<!--	</div>-->
+<!--    <div class="form-group">-->
+<!--        <input type="text" name="USER_SECOND_NAME" maxlength="50" value="--><?//=$arResult["USER_SECOND_NAME"]?><!--" class="form-control bx-auth-input" placeholder="--><?//=GetMessage("AUTH_SECOND_NAME")?><!--" />-->
+<!--    </div>-->
+<!--	<div class="form-group">-->
+<!--		<input type="text" name="USER_LAST_NAME" maxlength="50" value="--><?//=$arResult["USER_LAST_NAME"]?><!--" class="form-control bx-auth-input" placeholder="--><?//=GetMessage("AUTH_LAST_NAME")?><!--" />-->
+<!--	</div>-->
+	<div class="form-group hidden">
 		<input type="text" name="USER_LOGIN" maxlength="50" value="<?=$arResult["USER_LOGIN"]?>" class="form-control bx-auth-input" placeholder="<?=GetMessage("AUTH_LOGIN_MIN")?>" /><span class="starrequired-input">*</span>
 	</div>
+    <div class="form-group">
+        <input type="text" name="USER_EMAIL" maxlength="255" value="<?=$arResult["USER_EMAIL"]?>" class="form-control bx-auth-input" placeholder="<?=GetMessage("AUTH_EMAIL")?>" /><?if($arResult["EMAIL_REQUIRED"]):?><span class="starrequired-input">*</span><?endif?>
+    </div>
 	<div class="form-group">
 		<input type="password" name="USER_PASSWORD" maxlength="50" value="<?=$arResult["USER_PASSWORD"]?>" class="form-control bx-auth-input" autocomplete="off" placeholder="<?=GetMessage("AUTH_PASSWORD_REQ")?>" /><span class="starrequired-input">*</span>
 		<?if($arResult["SECURE_AUTH"]):?>
@@ -71,9 +77,6 @@ if (strlen($arResult["BACKURL"]) > 0)
 	</div>
 	<div class="form-group">
 		<input type="password" name="USER_CONFIRM_PASSWORD" maxlength="50" value="<?=$arResult["USER_CONFIRM_PASSWORD"]?>" class="form-control bx-auth-input" autocomplete="off" placeholder="<?=GetMessage("AUTH_CONFIRM")?>" /><span class="starrequired-input">*</span>
-	</div>
-	<div class="form-group">
-			<input type="text" name="USER_EMAIL" maxlength="255" value="<?=$arResult["USER_EMAIL"]?>" class="form-control bx-auth-input" placeholder="<?=GetMessage("AUTH_EMAIL")?>" /><?if($arResult["EMAIL_REQUIRED"]):?><span class="starrequired-input">*</span><?endif?>
 	</div>
 <?// ********************* User properties ***************************************************?>
 <?if($arResult["USER_PROPERTIES"]["SHOW"] == "Y"):?>
@@ -124,6 +127,7 @@ if (strlen($arResult["BACKURL"]) > 0)
 							"button_caption" => GetMessage("AUTH_REGISTER"),
 							"fields" => array(
 								rtrim(GetMessage("AUTH_NAME"), ":"),
+								rtrim(GetMessage("AUTH_SECOND_NAME"), ":"),
 								rtrim(GetMessage("AUTH_LAST_NAME"), ":"),
 								rtrim(GetMessage("AUTH_LOGIN_MIN"), ":"),
 								rtrim(GetMessage("AUTH_PASSWORD_REQ"), ":"),
@@ -148,7 +152,13 @@ if (strlen($arResult["BACKURL"]) > 0)
 </form>
 </noindex>
 <script type="text/javascript">
-document.bform.USER_NAME.focus();
+//document.bform.USER_NAME.focus();
+$(document).ready(function () {
+    $("input[name=Register]").click(function () {
+        var value = $("input[NAME=USER_EMAIL]").val();
+        $("input[NAME=USER_LOGIN]").val(value);
+    });
+});
 </script>
 
 <?endif?>
