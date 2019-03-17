@@ -212,7 +212,7 @@ if ($isFilter)
 
             ?><ul class="catalog-sort"><?
             ?><li><?echo GetMessage("LODIO_CATALOG_SPECIAL")?>:</li><?
-            ?><li><a class="catalogHit <?if($_REQUEST['hit'] == 'Да'):?>active<?endif?>" href="<?=$APPLICATION->GetCurPageParam("hit=Да")?>">Хит продаж</a></li><?
+            ?><li><a class="catalogHit <?if($_REQUEST['hit'] == 'Да'):?>active<?endif?>" href="<?=$APPLICATION->GetCurPageParam("hit=Да")?>">Хиты продаж</a></li><?
             ?><li><a class="catalogNew <?if($_REQUEST['new'] == 'Да'):?>active<?endif?>" href="<?=$APPLICATION->GetCurPageParam("new=Да")?>">Новинки</a></li><?
             ?><li><a class="catalogSale <?if($_REQUEST['sale'] == 'Да'):?>active<?endif?>" href="<?=$APPLICATION->GetCurPageParam("sale=Да")?>">Скидки</a></li><?
             ?><li class="separator">|</li><?
