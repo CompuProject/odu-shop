@@ -5,9 +5,10 @@ $this->setFrameMode(true);
 	foreach($arResult['ITEMS'] as $arItem)
 	{
 		if ($arItem['PICTURE_SRC'])
-		{			
-			?><div class="slider__item"><?
-				?><img src="<?=$arItem['PICTURE_SRC'];?>" alt="aloha" class="slider__img"><?
+		{
+			?><div class="slider__item" style='background-image: url("<?=$arItem['PICTURE_SRC'];?>")'><?
+//				?><!--<img src="--><?//=$arItem['PICTURE_SRC'];?><!--" alt="aloha" class="slider__img">--><?//
+            ?><div class="slider_bg"><?
 				?><div class="slider__caption"><?
 					if ($arItem['PREVIEW_TEXT'])
 					{
@@ -21,8 +22,9 @@ $this->setFrameMode(true);
 					{
 						?><a href="<?=$arItem['PROPERTIES']['ALOHA_SLIDER_URL']['VALUE'];?>" class="btn-black"><?=$arItem['PROPERTIES']['ALOHA_SLIDER_TEXT']['VALUE'];?></a><?
 					}
-				?></div><?		
-			?></div><?			
+				?></div><?
+            ?></div><?
+			?></div><?
 		}
 	}
 ?></section><?
