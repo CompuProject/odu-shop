@@ -7,13 +7,13 @@ $aMenuLinks = Array(
 		Array(), 
 		"" 
 	),
-	Array(
-		"Стоимость доставки", 
-		SITE_DIR . "rates/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
+//	Array(
+//		"Стоимость доставки",
+//		SITE_DIR . "rates/",
+//		Array(),
+//		Array(),
+//		""
+//	),
 	Array(
 		"Политика конфиденциальности", 
 		SITE_DIR . "privacy.pdf", 
