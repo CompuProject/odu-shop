@@ -12,6 +12,11 @@ $APPLICATION->SetTitle("О НАС");
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="row">
+                                <div class="col-sm-12 aboutUsImg">
+                                    <img src="<?= SITE_TEMPLATE_PATH ?>/images/aboutUsImg.jpg" alt="О компании Одежда для успеха">
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="confirm__form-item col-sm-12">
                                     <p class="product__text">Компания «Одежда для успеха» в рамках многопрофильного
                                         холдинга была основана в 1993 году. Сферами деятельности у истоков организации
