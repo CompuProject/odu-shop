@@ -84,4 +84,20 @@ class CP_CatalogHelper
         }
         return $propertyValue;
     }
+
+    /** Возвращает false если товар находится в разделе Акссесуары
+     * @param $sectionId - идентификатор секции в которой находится товар
+     * @return bool
+     */
+    public static function getParentSectionNotAksessuary ($sectionId) {
+        $nav = CIBlockSection::GetNavChain(CP_CatalogHelper::getShopIblockId(), $sectionId, array("CODE"));
+        while ($navArray = $nav->Fetch()) {
+            $result[] = $navArray["CODE"];
+        }
+        if ($result[0] == "aksessuary") {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
 }

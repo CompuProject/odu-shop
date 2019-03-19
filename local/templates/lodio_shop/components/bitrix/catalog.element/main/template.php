@@ -1,8 +1,19 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
-
+include_once $_SERVER["DOCUMENT_ROOT"] . "/cp_lib/Helpers/CP_CatalogHelper.php";
 $this->setFrameMode(true);
 ob_start();
-?><div class="container product"><?
+?>
+<?if (CP_CatalogHelper::getParentSectionNotAksessuary($arResult["IBLOCK_SECTION_ID"])):?>
+    <div class="sizeBlockBtn">Таблица размеров</div>
+    <div class="sizeBlockWrapper">
+        <? $APPLICATION->IncludeComponent("bitrix:main.include", "", Array(
+                "AREA_FILE_SHOW" => "file",
+                "PATH" => SITE_DIR . "include/size_panel.php"
+            )
+        ); ?>
+    </div>
+<?endif;?>
+<div class="container product"><?
 	?><div class="row"><?
 		?><div class="col-md-6"><?
 			?><div class="product__slider-thumbs-wrap"><?

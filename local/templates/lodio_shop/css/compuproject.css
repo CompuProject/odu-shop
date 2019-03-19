@@ -123,6 +123,74 @@
     font-size: 16px;
     font-weight: 500;
 }
+.sizeBlockBtn {
+    position: fixed;
+    right: 42px;
+    top:160px;
+    writing-mode: tb-rl;
+    padding: 25px 20px 25px 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #105378;
+    cursor: pointer;
+    border: 1px solid #105378;
+}
+.sizeBlockBtn:hover {
+    color: #ffffff;
+    background-color: #105378;
+}
+.sizeBlockWrapper {
+    position: fixed;
+    top:160px;
+    right: -25%;
+    border: 1px solid #105378;
+    width: 25%;
+    height: auto;
+    z-index: 1000;
+    background-color: #FFFFFF;
+}
+.size_panel_wrapper {
+    padding: 10px;
+}
+.size_panel_table {
+    padding-top: 10px;
+}
+.size_panel_header {
+    text-align: center;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.size_panel_wrapper table {
+    border-collapse: collapse;
+    margin: auto;
+}
+.sizeRow {
+    font-size: 1.3em;
+}
+.sizeRowHeader {
+    font-weight: 600;
+    text-align: center;
+}
+.sizeRow td {
+    padding: 5px 10px;
+}
+.sizeRow .sizeRowValue {
+    text-align: center;
+    border: 1px dashed #7e7e7e;
+}
+.size_panel_closeBtn_row {
+    padding: 10px 28px 0 28px;
+}
+.size_panel_closeBtn {
+    background-color: rgba(0,0,0,.2);
+    text-align: center;
+    font-size: 1.5em;
+    padding: 5px;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+}
 @media (max-width: 991px) {
     .footer__row {
         padding: 45px 15px;
