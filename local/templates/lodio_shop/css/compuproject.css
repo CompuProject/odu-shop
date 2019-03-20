@@ -205,12 +205,15 @@
 .aboutUsImg img{
     width: 100%;
 }
+.size__table {
+    display: none;
+}
 @media (max-width: 991px) {
     .footer__row {
         padding: 45px 15px;
     }
-    .footer__nav .footer_column_block:first-child {
-        margin-right: 15px;
+    .footer__nav .footer_column_block {
+        width: 100%;
     }
     .footer__contacts-box .footer_header {
         text-align: center;
@@ -260,9 +263,34 @@
     .slider__title {
         font-size: 1.5em;
     }
+    .product__text {
+        padding-top: 15px;
+    }
+    .size__table {
+        display: block;
+        font-size: 1.2em;
+        color: #105378;
+        text-decoration: underline;
+        padding-bottom: 15px;
+    }
+    .footer__contacts-box.imgCP {
+        text-align: center;
+    }
+    .footer__contacts-box.imgCP img {
+        width: 80%;
+    }
+    .footer__contacts-box {
+        text-align: center;
+    }
 }
 @media (max-width: 568px) {
     .header__buttons {
         text-align: right;
+    }
+    .sizeBlockBtn {
+        display: none;
+    }
+    .sizeBlockWrapper {
+        display: none;
     }
 }

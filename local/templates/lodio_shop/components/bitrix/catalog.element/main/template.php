@@ -65,6 +65,7 @@ ob_start();
 						?>
 					<?endforeach?>
 				</p>
+                  <div class="size__table"><a href="/size_table/">Таблица размеров</a></div>
                 <?/*?><p class="product__text"><?=$arResult['DETAIL_TEXT']?></p><?*/?>
               </div>
 			  <?if ($arResult['OFFERS']):?>
