@@ -23,6 +23,7 @@ function backToTop() {
         return false;
     });
 }
+/*Выдвигание таблицы размеров*/
 function getSizeBlock() {
     var checker = false;
     $('.sizeBlockBtn').click(function () {
@@ -35,10 +36,25 @@ function getSizeBlock() {
     $('.size_panel_closeBtn').click(function () {
         if (checker == true) {
             checker = false;
-            $('.sizeBlockWrapper').animate({right:"-25%"},500);
+            var blockWidth = $('.sizeBlockWrapper').width();
+            $('.sizeBlockWrapper').animate({right:"-"+blockWidth},500);
             setTimeout(function () {
                 $('.sizeBlockBtn').show();
             }, 500);
+        }
+    });
+    $('.btnBlockRow .tabBtn').click(function () {
+        if (!$(this).hasClass('active')) {
+            $('.btnBlockRow .tabBtn').removeClass("active");
+            $(this).addClass("active");
+            var tableId = $(this).attr("name");
+            $(".size_panel_table").find("table").hide();
+            $(".size_panel_table").find("#"+tableId+"Table").show();
+            if (tableId == "parameter") {
+                $('.sizeBlockWrapper').animate({width:"50%"},200);
+            } else {
+                $('.sizeBlockWrapper').animate({width:"25%"},200);
+            }
         }
     });
 }
