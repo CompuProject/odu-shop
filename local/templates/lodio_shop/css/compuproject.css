@@ -55,6 +55,7 @@
     bottom: 50px;
     right: 20px;
     cursor: pointer;
+    z-index: 1500;
 }
 .circleUp i{
     color: #1f1f1f;
@@ -237,6 +238,22 @@
 }
 .mapBlockScript {
     width: 565px;
+}
+.blog__item {
+    min-height: 400px;
+}
+.bx-soa-pp-company-block .form-control {
+    overflow: hidden;
+}
+.noVariablError {
+    text-align: center;
+    color: #c5483e;
+}
+.product__poperties {
+    color: #3a3a3a;
+}
+.product__manufacturer {
+    font-size: 25px;
 }
 @media (max-width: 991px) {
     .footer__row {

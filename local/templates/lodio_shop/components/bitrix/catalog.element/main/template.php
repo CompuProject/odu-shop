@@ -209,7 +209,8 @@ ob_start();
 					}
 					else
 					{
-						$('.product__select--size .nice-select').css('border-color', '#C5483E');
+						$('.product__select--size .nice-select').css('border-color', '#C5483E').css('margin-bottom', '5px');
+                        $('.product__select--size .nice-select').after("<div class='noVariablError'>Не выбрано поле</div>");
 					}
 					if (color && color != 'color')
 					{
@@ -218,7 +219,7 @@ ob_start();
 					else
 					{
 						$('.product__select--color .nice-select').css('border-color', '#C5483E');
-					}					
+					}
 				}
 				
 				$('#color-select').change(function(){
