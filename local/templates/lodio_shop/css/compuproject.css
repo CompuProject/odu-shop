@@ -255,6 +255,9 @@
 .product__manufacturer {
     font-size: 25px;
 }
+.product__select--size:first-child {
+    margin-left: 0;
+}
 @media (max-width: 991px) {
     .footer__row {
         padding: 45px 15px;
