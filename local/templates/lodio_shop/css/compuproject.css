@@ -235,6 +235,9 @@
 .cd-slider-navigation li:last-child {
     right: 0;
 }
+.mapBlockScript {
+    width: 565px;
+}
 @media (max-width: 991px) {
     .footer__row {
         padding: 45px 15px;
@@ -308,6 +311,9 @@
     }
     .footer__contacts-box {
         text-align: center;
+    }
+    .mapBlockScript {
+        width: 100%;
     }
 }
 @media (max-width: 767px) {
