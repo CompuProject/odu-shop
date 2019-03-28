@@ -2,6 +2,8 @@ $(document).ready(function () {
     stickyHeader();
     backToTop();
     getSizeBlock();
+    // $('.product__slider-wrap .product__slider-item.slick-active img').loupe();
+    $(function () { $("a.easyzoom").easyZoom(); });
 });
 
 /*Липкая шапка*/
