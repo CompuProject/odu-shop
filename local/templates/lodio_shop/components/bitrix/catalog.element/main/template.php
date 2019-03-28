@@ -3,12 +3,32 @@ include_once $_SERVER["DOCUMENT_ROOT"] . "/cp_lib/Helpers/CP_CatalogHelper.php";
 $this->setFrameMode(true);
 ob_start();
 ?>
-<?if (CP_CatalogHelper::getParentSectionNotAksessuary($arResult["IBLOCK_SECTION_ID"])):?>
+<?if (CP_CatalogHelper::getParentSectionJenskoe($arResult["IBLOCK_SECTION_ID"])):?>
     <div class="sizeBlockBtn">Таблица размеров</div>
     <div class="sizeBlockWrapper">
         <? $APPLICATION->IncludeComponent("bitrix:main.include", "", Array(
                 "AREA_FILE_SHOW" => "file",
                 "PATH" => SITE_DIR . "include/size_panel.php"
+            )
+        ); ?>
+    </div>
+<?endif;?>
+<?if (CP_CatalogHelper::getParentSectionTrikitaj($arResult["IBLOCK_SECTION_ID"])):?>
+    <div class="sizeBlockBtn">Таблица размеров</div>
+    <div class="sizeBlockWrapper">
+        <? $APPLICATION->IncludeComponent("bitrix:main.include", "", Array(
+                "AREA_FILE_SHOW" => "file",
+                "PATH" => SITE_DIR . "include/size_panel_trikitaj.php"
+            )
+        ); ?>
+    </div>
+<?endif;?>
+<?if (CP_CatalogHelper::getParentSectionBruki($arResult["IBLOCK_SECTION_ID"])):?>
+    <div class="sizeBlockBtn">Таблица размеров</div>
+    <div class="sizeBlockWrapper">
+        <? $APPLICATION->IncludeComponent("bitrix:main.include", "", Array(
+                "AREA_FILE_SHOW" => "file",
+                "PATH" => SITE_DIR . "include/size_panel_bruki.php"
             )
         ); ?>
     </div>
@@ -31,7 +51,7 @@ ob_start();
 					foreach($arResult['GALLERY_THUMB'] as $pictureSrc)
 					{
 						?><div class="product__slider-item"><?
-							?><img src="<?=$pictureSrc['IMG']?>" alt="<?=$arResult['NAME']?>"><?
+                            ?><a href="<?=$pictureSrc['IMG']?>" class="easyzoom"><img src="<?=$pictureSrc['IMG']?>" alt="<?=$arResult['NAME']?>"></a><?
 						?></div><?
 					}
 				?></div><?

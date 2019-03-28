@@ -25,19 +25,19 @@ function backToTop() {
 }
 /*Выдвигание таблицы размеров*/
 function getSizeBlock() {
+    var blockWidth = $('.sizeBlockWrapper').width();
     var checker = false;
     $('.sizeBlockBtn').click(function () {
         if (checker == false) {
             checker = true;
             $(this).hide();
-            $('.sizeBlockWrapper').animate({right:"0"},500);
+            $('.sizeBlockWrapper').animate({right:"10px"},500);
         }
     });
     $('.size_panel_closeBtn').click(function () {
         if (checker == true) {
             checker = false;
-            var blockWidth = $('.sizeBlockWrapper').width();
-            $('.sizeBlockWrapper').animate({right:"-"+blockWidth},500);
+            $('.sizeBlockWrapper').animate({right:"-1000"},500);
             setTimeout(function () {
                 $('.sizeBlockBtn').show();
             }, 500);

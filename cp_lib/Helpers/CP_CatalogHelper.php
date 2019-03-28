@@ -100,4 +100,52 @@ class CP_CatalogHelper
             return TRUE;
         }
     }
+
+    /** Возвращает true если товар находится в разделе Женищнам
+     * @param $sectionId - идентификатор секции в которой находится товар
+     * @return bool
+     */
+    public static function getParentSectionJenskoe ($sectionId) {
+        $nav = CIBlockSection::GetNavChain(CP_CatalogHelper::getShopIblockId(), $sectionId);
+        while ($navArray = $nav->Fetch()) {
+            $result[] = $navArray["CODE"];
+        }
+        if ($result['0'] == "zhenshchinam") {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /** Возвращает true если товар находится в разделе Трикотаж Мужское
+     * @param $sectionId
+     * @return bool
+     */
+    public static function getParentSectionTrikitaj ($sectionId) {
+        $nav = CIBlockSection::GetNavChain(CP_CatalogHelper::getShopIblockId(), $sectionId);
+        while ($navArray = $nav->Fetch()) {
+            $result[$navArray["ID"]] = $navArray["XML_ID"];
+        }
+        if ($result[$sectionId] == "0caa52f0-35ac-11e9-8984-d46e0e1d82ce") {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /** Возвращает true если товар находится в разделе Брюки Мужское
+     * @param $sectionId
+     * @return bool
+     */
+    public static function getParentSectionBruki ($sectionId) {
+        $nav = CIBlockSection::GetNavChain(CP_CatalogHelper::getShopIblockId(), $sectionId);
+        while ($navArray = $nav->Fetch()) {
+            $result[$navArray["ID"]] = $navArray["XML_ID"];
+        }
+        if ($result[$sectionId] == "0caa52ec-35ac-11e9-8984-d46e0e1d82ce") {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
 }
