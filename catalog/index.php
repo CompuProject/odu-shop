@@ -165,7 +165,9 @@ $APPLICATION->SetTitle("");
 		"MESS_BTN_DETAIL" => "Подробнее",
 		"MESS_NOT_AVAILABLE" => "Нет в наличии",
 		"MIN_AMOUNT" => "10",
-		"OFFERS_CART_PROPERTIES" => "",
+		"OFFERS_CART_PROPERTIES" => array(
+		    0=>"SIZE",
+        ),
 		"OFFERS_SORT_FIELD" => "sort",
 		"OFFERS_SORT_FIELD2" => "id",
 		"OFFERS_SORT_ORDER" => "desc",
@@ -190,7 +192,9 @@ $APPLICATION->SetTitle("");
 		"PRICE_VAT_SHOW_VALUE" => "N",
 		"PRODUCT_DISPLAY_MODE" => "Y",
 		"PRODUCT_ID_VARIABLE" => "id",
-		"PRODUCT_PROPERTIES" => "",
+		"PRODUCT_PROPERTIES" => array(
+		    0=>"CML2_ARTICLE",
+        ),
 		"PRODUCT_PROPS_VARIABLE" => "prop",
 		"PRODUCT_QUANTITY_VARIABLE" => "quantity",
 		"QUANTITY_FLOAT" => "N",
