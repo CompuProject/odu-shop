@@ -20,7 +20,6 @@ class CP_NonCatalogElementUpdater
         $parent_catalog_key = key($arFields["PROPERTY_VALUES"]["96"]);
         $iBlockSectionId['0'] = CP_CatalogHelper::convertCatalogXMLIdtoID(CP_CatalogHelper::getEnumPropertyValueFromId($arFields["PROPERTY_VALUES"]["96"][$parent_catalog_key]["VALUE"]));
         $res = CIBlockElement::SetElementSection($arFields["ID"], $iBlockSectionId, TRUE);
-        self::getLog ($arFields["ID"], $arFields["NAME"], $res);
     }
 
     public static function getLog ($elementId, $elementName, $res) {
