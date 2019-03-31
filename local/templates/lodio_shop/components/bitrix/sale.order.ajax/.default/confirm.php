@@ -15,6 +15,9 @@ if ($arParams["SET_TITLE"] == "Y")
 <? if (!empty($arResult["ORDER"])): ?>
 	
 	<table class="sale_order_full_table">
+        <tr>
+            <td>Спасибо за оформление заказа в интернет-магазине Одежда для успеха</td>
+        </tr>
 		<tr>
 			<td>
 				<?=Loc::getMessage("SOA_ORDER_SUC", array(
@@ -30,6 +33,9 @@ if ($arParams["SET_TITLE"] == "Y")
 				<?//=Loc::getMessage("SOA_ORDER_SUC1", array("#LINK#" => $arParams["PATH_TO_PERSONAL"]))?>
 			</td>
 		</tr>
+        <tr>
+            <td>Ожидайте пока с Вами свяжется наш менеджер для уточнения деталей заказа</td>
+        </tr>
 	</table>
 
 	<?
