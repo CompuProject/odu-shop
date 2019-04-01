@@ -167,7 +167,7 @@ $APPLICATION->SetTitle("Главная");
                         "USE_PRICE_COUNT" => "N",
                         "USE_PRODUCT_QUANTITY" => "Y",
                         "COMPONENT_TEMPLATE" => "main-catalog",
-                        "CUSTOM_FILTER" => "{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[{\"CLASS_ID\":\"CondIBProp:4:109\",\"DATA\":{\"logic\":\"Equal\",\"value\":\"Да\"}}]}",
+                        "CUSTOM_FILTER" => "{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[{\"CLASS_ID\":\"CondIBProp:4:109\",\"DATA\":{\"logic\":\"Equal\",\"value\":\"1387\"}}]}",
                         "HIDE_NOT_AVAILABLE_OFFERS" => "N",
                         "AJAX_OPTION_JUMP" => "N",
                         "AJAX_OPTION_STYLE" => "Y",

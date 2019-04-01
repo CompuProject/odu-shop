@@ -76,22 +76,22 @@ if ($isFilter)
 	if ($_REQUEST['new'] == 'Да')
 	{
 		$specialName = GetMessage("LODIO_CATALOG_NEW");
-		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_NEW'] = 'Да';
+		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_NEW_VALUE'] = 'Да';
 	}
 	if ($_REQUEST['hit'] == 'Да')
 	{
 		$specialName = GetMessage("LODIO_CATALOG_HIT");
-		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_HIT'] = 'Да';
+		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_HIT_VALUE'] = 'Да';
 	}
 	if ($_REQUEST['sale'] == 'Да')
 	{
 		$specialName = GetMessage("LODIO_CATALOG_SALE");
-		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_SALE'] = 'Да';
+		$GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_SALE_VALUE'] = 'Да';
 	}
 
 	if ($_REQUEST['brand'] == 'GerryWebber') {
         $specialName = GetMessage("LODIO_CATALOG_BRAND");
-        $GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_BRAND_VALUE'] = 'Производитель';
+        $GLOBALS[$arParams["FILTER_NAME"]]['PROPERTY_BRAND_VALUE'] = 'Gerry Weber';
     }
 
 ?><div class="content-wrap"><?

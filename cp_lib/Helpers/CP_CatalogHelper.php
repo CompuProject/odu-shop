@@ -164,7 +164,7 @@ class CP_CatalogHelper
      * @return bool
      */
     public static function getBoolPopularGoods () {
-        $arFilter = Array('IBLOCK_ID' => CP_CatalogHelper::getShopIblockId(), "ACTIVE"=>"Y", 'PROPERTY_HIT'=>"1387");
+        $arFilter = Array('IBLOCK_ID' => CP_CatalogHelper::getShopIblockId(), "ACTIVE"=>"Y", 'PROPERTY_HIT_VALUE'=>"Да");
         $res = CIBlockElement::GetList(Array(), $arFilter, false);
         if ($ar_result = $res->Fetch() == '') {
             return false;
