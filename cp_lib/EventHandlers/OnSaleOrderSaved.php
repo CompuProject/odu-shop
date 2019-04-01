@@ -17,12 +17,18 @@ function init(Main\Event $event)
         $basket = $order->getBasket();
         $basketString = array_values($basket->getListOfFormatText());
         $basketItems = $basket->getBasketItems();
+        $counter = '0';
         foreach ($basketItems as $key=>$item) {
             $itemId = CCatalogSku::GetProductInfo($item->getProductId());
-            $resultAr["ITEMS"][$item->getProductId()]["PRODUCT_ID"] = $itemId["ID"];
-            $resultAr["ITEMS"][$item->getProductId()]["PRODUCT_NAME"] = $basketString[$key];
+            if ($itemId == FALSE) {
+                $resultAr["ITEMS"][$counter]["PRODUCT_ID"] = $item->getProductId();
+                $resultAr["ITEMS"][$counter]["PRODUCT_NAME"] = $basketString[$key];
+            } else {
+                $resultAr["ITEMS"][$counter]["PRODUCT_ID"] = $itemId["ID"];
+                $resultAr["ITEMS"][$counter]["PRODUCT_NAME"] = $basketString[$key];
+            }
+            $counter++;
         }
-
         if (!empty($resultAr)) {
             foreach ($resultAr["ITEMS"] as $key=>$element) {
                 $db_props = CIBlockElement::GetProperty(CP_CatalogHelper::getShopIblockId(), $element["PRODUCT_ID"], array("sort" => "asc"), Array("CODE"=>"CML2_ARTICLE"));
@@ -47,7 +53,7 @@ function init(Main\Event $event)
         $message .= '<head>';
         $message .= '<style>';
         $message .= 'table{border-collapse: collapse;}';
-        $message .= 'td, th{border: 1px solid black;}';
+        $message .= 'td, th{border: 1px solid black;padding:5px}';
         $message .= '</style>';
         $message .= '</head>';
         $message .= '<body>';
@@ -68,11 +74,11 @@ function init(Main\Event $event)
             $message .= '<td>'.$item["PRODUCT_BRAND"].'</td>';
             $message .= '</tr>';
         }
-        $message .= '<p>Подробности на <a href="http://shop.odu62.ru/bitrix/admin/sale_order_view.php?ID='.$resultAr["ORDER_ID"].'&lang=ru&filter=Y&set_filter=Y">сайте</a></p>';
         $message .= '</table>';
+        $message .= '<p>Подробности на <a href="http://shop.odu62.ru/bitrix/admin/sale_order_view.php?ID='.$resultAr["ORDER_ID"].'&lang=ru&filter=Y&set_filter=Y">сайте</a></p>';
         $message .= '</body>';
         $message .= '</html>';
         mail($to, $subject, $message, $headers);
     }
-    //    AddMessage2Log($order->getField("STATUS_ID"));
+//    AddMessage2Log($resultAr);
 }
