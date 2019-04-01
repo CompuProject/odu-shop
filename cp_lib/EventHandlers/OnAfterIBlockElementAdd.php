@@ -14,8 +14,10 @@ class CP_NonCatalogElementUpdater
     public static function init (&$arFields)
     {
         $activity_key = key ($arFields["PROPERTY_VALUES"]["95"]);
-        if ($arFields["PROPERTY_VALUES"]["95"][$activity_key]["VALUE"] != '') {
-            $arFields["ACTIVE"] = static::$activnost[$arFields["PROPERTY_VALUES"]["95"][$activity_key]["VALUE"]];
+        if (CP_CatalogHelper::getEnumPropertyCodeFromId($arFields["PROPERTY_VALUES"]["95"][$activity_key]["VALUE"]) == 'Да') {
+            $arFields["ACTIVE"] = static::$activnost[CP_CatalogHelper::getEnumPropertyCodeFromId($arFields["PROPERTY_VALUES"]["95"][$activity_key]["VALUE"])];
+        } else {
+            $arFields["ACTIVE"] = "N";
         }
         $parent_catalog_key = key($arFields["PROPERTY_VALUES"]["96"]);
         $catalog_id = CP_CatalogHelper::convertCatalogXMLIdtoID(CP_CatalogHelper::getEnumPropertyValueFromId($arFields["PROPERTY_VALUES"]["96"][$parent_catalog_key]["VALUE"]));

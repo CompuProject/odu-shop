@@ -85,6 +85,17 @@ class CP_CatalogHelper
         return $propertyValue;
     }
 
+    /** Функция по идентификатору  значения множественного свойства возвращает его значение
+     * @return mixed
+     */
+    public static function getEnumPropertyCodeFromId ($enumValueId) {
+        $property_enums = CIBlockPropertyEnum::GetList(Array("DEF"=>"DESC", "SORT"=>"ASC"), Array("IBLOCK_ID"=>"4","ID"=>$enumValueId));
+        while($enum_fields = $property_enums->GetNext()){
+            $propertyValue = $enum_fields["VALUE"];
+        }
+        return $propertyValue;
+    }
+
     /** Возвращает false если товар находится в разделе Акссесуары
      * @param $sectionId - идентификатор секции в которой находится товар
      * @return bool
@@ -153,7 +164,7 @@ class CP_CatalogHelper
      * @return bool
      */
     public static function getBoolPopularGoods () {
-        $arFilter = Array('IBLOCK_ID' => CP_CatalogHelper::getShopIblockId(), "ACTIVE"=>"Y", 'PROPERTY_HIT'=>"Да");
+        $arFilter = Array('IBLOCK_ID' => CP_CatalogHelper::getShopIblockId(), "ACTIVE"=>"Y", 'PROPERTY_HIT'=>"1387");
         $res = CIBlockElement::GetList(Array(), $arFilter, false);
         if ($ar_result = $res->Fetch() == '') {
             return false;
