@@ -14,6 +14,7 @@ class CP_ActivateElementUpdater
 
     public static function init(&$arFields)
     {
+
         if ($arFields["IBLOCK_ID"] != CP_CatalogHelper::getShopIblockId()) {
             return;
         }
@@ -24,9 +25,12 @@ class CP_ActivateElementUpdater
         } else {
             $arFields["ACTIVE"] = "N";
         }
-        if (!empty($arFields["IBLOCK_SECTION"])) {
+        $catalog_id = CP_CatalogHelper::convertCatalogXMLIdtoID(CP_CatalogHelper::getEnumPropertyValueFromId($arFields["PROPERTY_VALUES"]["96"][$parent_catalog_key]["VALUE"]));
+        if ($catalog_id != '1102' && $catalog_id != '1103') {
+            $bs = new CIBlockSection();
+            $bs->Update($catalog_id, Array("ACTIVE"=>"Y"));
             $section_key = key($arFields["IBLOCK_SECTION"]);
-            $arFields["IBLOCK_SECTION"][$section_key] = CP_CatalogHelper::convertCatalogXMLIdtoID(CP_CatalogHelper::getEnumPropertyValueFromId($arFields["PROPERTY_VALUES"]["96"][$parent_catalog_key]["VALUE"]));
+            $arFields["IBLOCK_SECTION"][$section_key] = $catalog_id;
         }
     }
 }

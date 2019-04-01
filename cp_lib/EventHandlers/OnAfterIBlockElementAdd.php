@@ -18,8 +18,13 @@ class CP_NonCatalogElementUpdater
             $arFields["ACTIVE"] = static::$activnost[$arFields["PROPERTY_VALUES"]["95"][$activity_key]["VALUE"]];
         }
         $parent_catalog_key = key($arFields["PROPERTY_VALUES"]["96"]);
-        $iBlockSectionId['0'] = CP_CatalogHelper::convertCatalogXMLIdtoID(CP_CatalogHelper::getEnumPropertyValueFromId($arFields["PROPERTY_VALUES"]["96"][$parent_catalog_key]["VALUE"]));
-        $res = CIBlockElement::SetElementSection($arFields["ID"], $iBlockSectionId, TRUE);
+        $catalog_id = CP_CatalogHelper::convertCatalogXMLIdtoID(CP_CatalogHelper::getEnumPropertyValueFromId($arFields["PROPERTY_VALUES"]["96"][$parent_catalog_key]["VALUE"]));
+        if ($catalog_id != '1102' && $catalog_id != '1103') {
+            $bs = new CIBlockSection();
+            $bs->Update($catalog_id, Array("ACTIVE"=>"Y"));
+            $section_key = key($arFields["IBLOCK_SECTION"]);
+            $arFields["IBLOCK_SECTION"][$section_key] = $catalog_id;
+        }
     }
 
     public static function getLog ($elementId, $elementName, $res) {

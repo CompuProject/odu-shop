@@ -26,7 +26,7 @@ class CP_CatalogHelper
      */
     public static function convertCatalogXMLIdtoID($xml_id)
     {
-        $arFilter = Array('IBLOCK_ID' => self::getShopIblockId(), 'XML_ID' => $xml_id, 'GLOBAL_ACTIVE' => 'Y');
+        $arFilter = Array('IBLOCK_ID' => self::getShopIblockId(), 'XML_ID' => $xml_id);
         $db_list = CIBlockSection::GetList(Array("SORT" => "ASC"), $arFilter, true);
         while ($ar_result = $db_list->GetNext()) {
             $catalogId = $ar_result['ID'];
