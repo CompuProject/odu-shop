@@ -148,4 +148,17 @@ class CP_CatalogHelper
             return FALSE;
         }
     }
+
+    /** Проверяет, есть ли хоть один товар со статусом Хит продаж
+     * @return bool
+     */
+    public static function getBoolPopularGoods () {
+        $arFilter = Array('IBLOCK_ID' => CP_CatalogHelper::getShopIblockId(), "ACTIVE"=>"Y", 'PROPERTY_HIT'=>"Да");
+        $res = CIBlockElement::GetList(Array(), $arFilter, false);
+        if ($ar_result = $res->Fetch() == '') {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
