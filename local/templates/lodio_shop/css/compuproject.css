@@ -280,8 +280,21 @@
     line-height: 600px;
     text-align: center;
     z-index: 1001;
-    top: 100px}
+    top: 100px
+}
+.headerCallBackPhone {
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+.headerCallBackPhone a:hover {
+    color: #000000;
+    cursor: default
+}
 @media (max-width: 991px) {
+    .headerCallBackPhone {
+        display: none;
+    }
     .footer__row {
         padding: 45px 15px;
     }

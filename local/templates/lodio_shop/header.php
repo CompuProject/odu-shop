@@ -85,6 +85,7 @@ $curDir = $APPLICATION->GetCurDir();
                     false
                 ); ?>
                 <div class="headerCallBackBlock">
+                    <div class="headerCallBackPhone"><a href="tel:+74912952600">+7 (4912) 95-26-00</a></div>
                     <? $APPLICATION->IncludeComponent("compuproject:include.form",
                         "headerCallBack",
                         Array()
