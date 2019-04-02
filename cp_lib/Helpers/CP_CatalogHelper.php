@@ -172,4 +172,22 @@ class CP_CatalogHelper
             return true;
         }
     }
+
+    /** Функция возвращает значение свойства товара по символьному коду $propertyCode по идентификатору товара $productId
+     * @param $productId
+     * @param $propertyCode
+     * @return mixed
+     */
+    public static function getPropertyValue ($productId, $propertyCode) {
+        $mxResult = CCatalogSku::GetProductInfo($productId);
+        if (is_array($mxResult)) {
+            $productId = $mxResult["ID"];
+        }
+        $db_props = CIBlockElement::GetProperty(CP_CatalogHelper::getShopIblockId(),$productId, array("sort" => "asc"), array("CODE"=>$propertyCode));
+        while ($ob = $db_props->GetNext())
+        {
+            $value = $ob["VALUE"];
+        }
+        return $value;
+    }
 }
