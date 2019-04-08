@@ -291,6 +291,9 @@
     color: #000000;
     cursor: default
 }
+.product__text {
+    padding-left: 110px;
+}
 @media (max-width: 991px) {
     .headerCallBackPhone {
         display: none;
